@@ -4,20 +4,17 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class PassengerInformation  extends JFrame {
     static PassengerInformation register;
     static JFrame customerRegistration;
+    static PurchasedTicketSearch searchBox;
 
 //don't mind the colors or spacing, just setting things up
     public static void passengerInformation(){
@@ -120,6 +117,6 @@ public class PassengerInformation  extends JFrame {
     public static void main(String[] args) {
         System.out.println("Welcome to our Airport!");
         passengerInformation();
+        searchBox.purchasedTicketSearch();
     }
-
 }
