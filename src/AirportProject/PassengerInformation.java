@@ -24,7 +24,7 @@ public class PassengerInformation  extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(1, 3));
         JPanel panelFields1 = new JPanel();
-        panelFields1.setLayout(new GridLayout(13,1));
+        panelFields1.setLayout(new GridLayout(15,1));
         panelFields1.setSize(175,350);
         JPanel panelFields2 = new JPanel();
         panelFields2.setLayout(new GridLayout(9,1));
@@ -44,14 +44,15 @@ public class PassengerInformation  extends JFrame {
         JLabel phone = new JLabel("phone");
         JTextField phoneNumberArea = new JTextField(14); // add validations
         JLabel age = new JLabel("Birth year");
+        JLabel askGender = new JLabel("Gender:");
         JTextField ageArea = new JTextField(3);
         JTextField spacer2 = new JTextField(12);
         spacer.setVisible(false);
         String[] choices = {"Male", "Female"};
         final JComboBox<String> gender = new JComboBox<String>(choices);
 
-        gender.setMaximumSize(gender.getPreferredSize()); // added code
-        gender.setAlignmentX(Component.CENTER_ALIGNMENT);// added code
+        gender.setMaximumSize(gender.getPreferredSize());
+        gender.setAlignmentX(Component.CENTER_ALIGNMENT);
         panelFields1.add(name);
         panelFields1.add(nameArea);
         panelFields1.add(name2);
@@ -60,23 +61,25 @@ public class PassengerInformation  extends JFrame {
         panelFields1.add(emailArea);
         panelFields1.add(phone);
         panelFields1.add(phoneNumberArea);
+        panelFields1.add(spacer);
+        panelFields1.add(askGender);
         panelFields1.add(gender);
         panelFields1.add(spacer);
         panelFields1.add(spacer2);
         panelFields1.add(age);
         panelFields1.add(ageArea);
         customerInfo1.add(panelFields1);
+        panel.add(customerInfo1);
 
         // start panel 2 here?
-        panel.add(customerInfo1);
         JPanel customerInfo2 = new JPanel();
         customerInfo2.setBackground(Color.GREEN);
 
         customerInfo2.add(panelFields2);
 
+        //panel 3 below here
         JButton continueButton = new JButton("continue");
         customerRegistration.setUndecorated(true); // disables close with 'X' option
-//        panel.add(customerInfo1);
         panel.add(customerInfo2);
         panel.add(continueButton);
         customerRegistration.add(panel);
