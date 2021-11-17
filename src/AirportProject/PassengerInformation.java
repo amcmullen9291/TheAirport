@@ -6,6 +6,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -149,7 +150,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
 
 
         //panel 3 below here
-        JButton continueButton = new JButton("continue");
+        JButton continueButton = new JButton("Continue");
         JButton searchTrips = new JButton("Search");
         searchTrips.setForeground(Color.BLUE);
         searchTrips.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -160,9 +161,10 @@ public class PassengerInformation  extends JFrame implements EventListener {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                purchase.ticket.setVisible(true);
+//                purchase.ticket.setVisible(true);
                 customerRegistration.setVisible(false);
                 BoardingPassTicket pass = new BoardingPassTicket();
+                    pass.BoardingPassTicket();
             }
         });
         searchTrips.addActionListener( new ActionListener()

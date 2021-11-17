@@ -1,27 +1,12 @@
 package AirportProject;
 
-//<<<<<<< Updated upstream
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-//=======
-//<<<<<<< Updated upstream
-//=======
-import javax.swing.*;
-import java.awt.*;
-//>>>>>>> Stashed changes
-//>>>>>>> Stashed changes
-import java.util.Random;
 
 public class PurchasedTicket {
-
-//<<<<<<< Updated upstream
     static PurchasedTicket PurchasedTicket;
-//=======
-//<<<<<<< Updated upstream
-//>>>>>>> Stashed changes
-    static String ticketNumberString ="";
     static double discount = 0.00;
     static double ticketPrice;
     static JFrame ticket;
@@ -42,17 +27,17 @@ public class PurchasedTicket {
 
     }
 
-
-    public void getTicketString() { // just a suggestion for randomly generated boardingPass Number
-        String ticketNumber = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 9) { // length of the random string.
-            int index = (int) (rnd.nextFloat() * ticketNumber.length());
-            salt.append(ticketNumber.charAt(index));
-        }
-        ticketNumberString = salt.toString();
-    }
+//moved to Data Collection Class
+//    public void getTicketString() { // just a suggestion for randomly generated boardingPass Number
+//        String ticketNumber = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+//        StringBuilder salt = new StringBuilder();
+//        Random rnd = new Random();
+//        while (salt.length() < 9) { // length of the random string.
+//            int index = (int) (rnd.nextFloat() * ticketNumber.length());
+//            salt.append(ticketNumber.charAt(index));
+//        }
+//        ticketNumberString = salt.toString();
+//    }
 
     public double discountedTicketPrice(int birthYear){
         // if birthYear is less than ________ or larger than_________
@@ -63,5 +48,8 @@ public class PurchasedTicket {
 
     public void setVisible(boolean b) {
         ticket.setVisible(b);
+        ticket.getContentPane().setBackground(Color.decode("#1D16B0"));
+        ticket.getContentPane().setForeground(Color.decode("#1D16B0"));
+
     }
 }
