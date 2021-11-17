@@ -1,11 +1,13 @@
 package AirportProject;
 
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -13,6 +15,9 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.EventListener;
+
+//import javax.swing.JFrame;
+//import javax.swing.JPanel;
 
 public class PassengerInformation  extends JFrame implements EventListener {
     static PassengerInformation register;
@@ -41,7 +46,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.setLayout(new GridLayout(3,1));
 //        panelFields2.setSize(175,350);
         JPanel panelField3 = new JPanel();
-        panelFields2.setLayout(new GridLayout(3,1));
+        panelFields2.setLayout(new GridLayout(12,1)); //new
         panelField3.setLayout(new GridLayout(2,1));
 //setLocation was here
         panel.setSize(550,350);
@@ -87,7 +92,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
 
         // start panel 2 here?
         JLabel dateLabel = new JLabel("Today's Date:");
-        JPanel customerInfo2 = new JPanel();
+        JPanel customerInfo2 = new JPanel(new GridBagLayout());
         customerInfo2.setBackground(Color.GREEN);
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, 0);
@@ -106,6 +111,34 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.add(date2);
         panelFields2.add(dateLabel);
         panelFields2.add(date);
+        //Calendar
+        JLabel chooseMonth = new JLabel("Choose A Month:");
+        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        final JComboBox<String> monthList = new JComboBox<String>(months);
+
+        JLabel departure = new JLabel("Departure");
+        monthList.setMaximumSize(gender.getPreferredSize());
+        monthList.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        String[] flightTime = {"6:00am", "11:00am", "6:30pm", "Other"};
+        final JComboBox<String> flights = new JComboBox<String>(flightTime);
+        flights.setMaximumSize(gender.getPreferredSize());
+        flights.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        String[] airlines = {"AirExpress", "Kalamazoo Airlines", "Private Charter"};
+        final JComboBox<String> airlinesList = new JComboBox<String>(airlines);
+        airlinesList.setMaximumSize(gender.getPreferredSize());
+        airlinesList.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        panelFields2.add(airlinesList);
+        panelFields2.add(spacer);
+
+        panelFields2.add(spacer);
+        panelFields2.add(chooseMonth);
+        panelFields2.add(monthList);
+//        panelFields2.add(spacer);
+        panelFields2.add(departure);
+        panelFields2.add(flights);
         panelFields2.setBackground(Color.GRAY);
 //        panelFields2.add(date2);
         customerInfo2.add(panelFields2);
