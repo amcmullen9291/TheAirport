@@ -141,9 +141,9 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.add(monthList);
 //        panelFields2.add(spacer);
         JLabel dateField = new JLabel("Manually enter numerical date");
-        JTextField enteredDate = new JTextField();
-        enteredDate.setColumns(3);
-//        enteredDate.setAlignmentX(JTextField.CENTER_ALIGNMENT);
+        JTextField enteredDate = new JTextField(3);
+
+        //        enteredDate.setAlignmentX(JTextField.CENTER_ALIGNMENT);
         panelFields2.add(dateField);
         panelFields2.add(enteredDate);
 
