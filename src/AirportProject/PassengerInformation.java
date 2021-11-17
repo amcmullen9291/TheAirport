@@ -96,7 +96,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
         customerInfo2.setBackground(Color.decode("#100B7A"));
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, 0);
-//        LocalTime theDate = LocalTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd"+", "+ "HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String theTime = dtf.format(now);
@@ -126,7 +125,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
 
         //airlines
         JLabel airlinesLabel = new JLabel("Airline", SwingConstants.CENTER);
-//        airlinesLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);  //new
         String[] airlines = {"AirExpress", "Kalamazoo Airlines", "Private Charter"};
         final JComboBox<String> airlinesList = new JComboBox<String>(airlines);
         airlinesList.setMaximumSize(gender.getPreferredSize());
