@@ -22,7 +22,11 @@ public class PurchasedTicketSearch implements EventListener {
         searchBox.setForeground(Color.RED);
         searchBox.setUndecorated(true);
         searchBox.add(searchButton);
-        searchBox.setVisible(true);
+        searchBox.setVisible(false);
 
+    }
+
+    public void setVisible(boolean b) {
+        searchBox.setVisible(b);
     }
 }

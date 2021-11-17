@@ -4,14 +4,17 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.EventListener;
 
-public class PassengerInformation  extends JFrame {
+public class PassengerInformation  extends JFrame implements EventListener {
     static PassengerInformation register;
     static JFrame customerRegistration;
     static PurchasedTicketSearch searchBox;
@@ -19,7 +22,8 @@ public class PassengerInformation  extends JFrame {
 //don't mind the colors or spacing, just setting things up
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
-        Border border = new LineBorder(Color.RED, 13);
+        searchBox = new PurchasedTicketSearch(); //new
+        Border border = new LineBorder(Color.GRAY, 13);
         JButton results = new JButton("view results");
         results.setBorder(border);
         customerRegistration.setSize(800, 400);
@@ -29,13 +33,16 @@ public class PassengerInformation  extends JFrame {
         customerRegistration.getContentPane().setForeground(Color.decode("#1D16B0"));
         customerRegistration.setResizable(false);
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(1, 3));
+        panel.setLayout(new GridLayout(1, 3)); // changed here
         JPanel panelFields1 = new JPanel();
         panelFields1.setLayout(new GridLayout(15,1));
         panelFields1.setSize(175,350);
         JPanel panelFields2 = new JPanel();
         panelFields2.setLayout(new GridLayout(3,1));
 //        panelFields2.setSize(175,350);
+        JPanel panelField3 = new JPanel();
+        panelFields2.setLayout(new GridLayout(3,1));
+        panelField3.setLayout(new GridLayout(2,1));
 //setLocation was here
         panel.setSize(550,350);
         panel.setBorder(border);
@@ -105,9 +112,20 @@ public class PassengerInformation  extends JFrame {
 
         //panel 3 below here
         JButton continueButton = new JButton("continue");
-        customerRegistration.setUndecorated(true); // disables close with 'X' option
+        JButton searchTrips = new JButton("Search");
+        searchTrips.addActionListener( new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                searchBox.setVisible(true);
+            }
+        });
         panel.add(customerInfo2);
-        panel.add(continueButton);
+        panelField3.add(searchTrips);
+        panelField3.add(continueButton);
+        panel.add(panelField3);
+        customerRegistration.setUndecorated(true); // disables close with 'X' option
         customerRegistration.add(panel);
         customerRegistration.setVisible(true);
 
@@ -119,4 +137,6 @@ public class PassengerInformation  extends JFrame {
         passengerInformation();
         searchBox.purchasedTicketSearch();
     }
+
+
 }
