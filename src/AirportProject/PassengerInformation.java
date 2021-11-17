@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+//import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -28,7 +28,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
         searchBox = new PurchasedTicketSearch(); //new
-        Border border = new LineBorder(Color.GRAY, 13);
+        Border border = new LineBorder(Color.decode("#DD0A0A"), 13);
         JButton results = new JButton("view results");
         results.setBorder(border);
         customerRegistration.setSize(800, 400);
@@ -52,7 +52,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panel.setSize(550,350);
         panel.setBorder(border);
         JPanel customerInfo1 = new JPanel();
-        customerInfo1.setBackground(Color.ORANGE);
+        customerInfo1.setBackground(Color.decode("#A5A5AB"));
         JLabel name = new JLabel("Last Name");
         JTextField nameArea = new JTextField(15);
         JLabel name2 = new JLabel("First Name");
@@ -93,10 +93,10 @@ public class PassengerInformation  extends JFrame implements EventListener {
         // start panel 2 here?
         JLabel dateLabel = new JLabel("Today's Date:");
         JPanel customerInfo2 = new JPanel(new GridBagLayout());
-        customerInfo2.setBackground(Color.GREEN);
+        customerInfo2.setBackground(Color.decode("#100B7A"));
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, 0);
-        LocalTime theDate = LocalTime.now();
+//        LocalTime theDate = LocalTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd"+", "+ "HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String theTime = dtf.format(now);
@@ -115,7 +115,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
         JLabel chooseMonth = new JLabel("Choose A Month:");
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         final JComboBox<String> monthList = new JComboBox<String>(months);
-
         JLabel departure = new JLabel("Departure");
         monthList.setMaximumSize(gender.getPreferredSize());
         monthList.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -125,11 +124,15 @@ public class PassengerInformation  extends JFrame implements EventListener {
         flights.setMaximumSize(gender.getPreferredSize());
         flights.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        //airlines
+        JLabel airlinesLabel = new JLabel("Airline", SwingConstants.CENTER);
+//        airlinesLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);  //new
         String[] airlines = {"AirExpress", "Kalamazoo Airlines", "Private Charter"};
         final JComboBox<String> airlinesList = new JComboBox<String>(airlines);
         airlinesList.setMaximumSize(gender.getPreferredSize());
         airlinesList.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        panelFields2.add(airlinesLabel);
         panelFields2.add(airlinesList);
         panelFields2.add(spacer);
 
@@ -137,10 +140,22 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.add(chooseMonth);
         panelFields2.add(monthList);
 //        panelFields2.add(spacer);
+        JLabel dateField = new JLabel("Manually enter numerical date");
+        JTextField enteredDate = new JTextField();
+        enteredDate.setColumns(3);
+//        enteredDate.setAlignmentX(JTextField.CENTER_ALIGNMENT);
+        panelFields2.add(dateField);
+        panelFields2.add(enteredDate);
+
         panelFields2.add(departure);
         panelFields2.add(flights);
         panelFields2.setBackground(Color.GRAY);
 //        panelFields2.add(date2);
+//        JLabel dateField = new JLabel("Manually enter numerical date");
+//        JTextField enteredDate = new JTextField(2);
+//        enteredDate.setMaximumSize(enteredDate.getPreferredSize());
+//        panelFields2.add(dateField);
+//        panelFields2.add(enteredDate);
         customerInfo2.add(panelFields2);
 
         //panel 3 below here
