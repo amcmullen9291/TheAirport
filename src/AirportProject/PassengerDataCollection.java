@@ -16,7 +16,7 @@ public class PassengerDataCollection implements Serializable {
     public static String departureTime;
     public static double ticketPrice;
     public static String ticketNumber;
-    static HashMap<String, String> purchasedTicket = new HashMap<>();
+    public static HashMap<String, String> purchasedTicket = new HashMap<>();
     public static PassengerDataCollection guestInformation;
     public static String origin;
     public static PurchasedTicket ticketSold;
@@ -33,6 +33,8 @@ public class PassengerDataCollection implements Serializable {
         this.ticketPrice = ticketPrice;
         this.origin = origin;
         registerTicket();
+        getCustomerInfo();
+        ticketSold.showData();
     }
 
     public static void registerTicket(){
@@ -63,5 +65,8 @@ public class PassengerDataCollection implements Serializable {
         guestInformation.ticketNumber = salt.toString();
         purchasedTicket.put("Ticket Number: ", guestInformation.ticketNumber);
 
+    }
+    public static HashMap<String, String> getCustomerInfo() {
+        return purchasedTicket;
     }
 }

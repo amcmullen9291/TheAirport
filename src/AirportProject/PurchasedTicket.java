@@ -4,13 +4,15 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.util.HashMap;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
     static double discount = 0.00;
     static double ticketPrice;
     static JFrame ticket;
-    static PassengerInformation passenger;
+    static PassengerDataCollection passenger;
+    public static HashMap<String, String> customerInformation;
 
     public static void purchasedTicket(){
         ticket = new JFrame("Purchased Ticket");
@@ -25,6 +27,8 @@ public class PurchasedTicket {
         ticket.setResizable(false);
         ticket.setVisible(false);
             //@setup JFRAME with .setText from static Passenger instance?
+        //test
+        fetchCustomerData();
     }
 
 //moved to Data Collection Class
@@ -39,17 +43,18 @@ public class PurchasedTicket {
 //        ticketNumberString = salt.toString();
 //    }
 
-    public double discountedTicketPrice(int birthYear){
-        // if birthYear is less than ________ or larger than_________
-
-        return discount;
+    public static void showData(){
+        String destination = PassengerDataCollection.purchasedTicket.get("Destination");
+        System.out.println("customer's destination: " + destination);
     }
-
 
     public void setVisible(boolean b) {
         ticket.setVisible(b);
         ticket.getContentPane().setBackground(Color.decode("#1D16B0"));
         ticket.getContentPane().setForeground(Color.decode("#1D16B0"));
 
+    }
+    private static void fetchCustomerData() {
+        customerInformation = passenger.getCustomerInfo();
     }
 }

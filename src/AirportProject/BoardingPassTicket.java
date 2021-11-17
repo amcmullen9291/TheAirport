@@ -220,7 +220,7 @@ public class BoardingPassTicket {
 //    }
     public static double calculatePrice(String gender, int age ) {
         double price = basePrice;
-
+        //define passenger.ticketPrice again here
         if (age <= 12) {
             passenger.ticketPrice = (basePrice - (0.5 * basePrice));
         } else if (age >= 60) {
