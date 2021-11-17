@@ -1,23 +1,30 @@
 package AirportProject;
 
 
+//<<<<<<< Updated upstream
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 //import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.EventListener;
+import java.util.*;
 
-//import javax.swing.JFrame;
-//import javax.swing.JPanel;
+
+//<<<<<<< Updated upstream
+//=======
+
+//>>>>>>> Stashed changes
+
+
 
 public class PassengerInformation  extends JFrame implements EventListener {
     static PassengerInformation register;
@@ -150,6 +157,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.setBackground(Color.GRAY);
         customerInfo2.add(panelFields2);
 
+
         //panel 3 below here
         JButton continueButton = new JButton("continue");
         JButton searchTrips = new JButton("Search");
@@ -186,11 +194,16 @@ public class PassengerInformation  extends JFrame implements EventListener {
 
     }
 
+// ============
+
+
     public static void main(String[] args) {
         System.out.println("Welcome to our Airport!");
         passengerInformation();
         searchBox.purchasedTicketSearch();
+//<<<<<<< Updated upstream
         purchase.purchasedTicket();
+
     }
 
 
