@@ -28,7 +28,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
         searchBox = new PurchasedTicketSearch(); //new
-        Border border = new LineBorder(Color.decode("#DD0A0A"), 13);
+        Border border = new LineBorder(Color.decode("#DD0A0A"), 13); // red boarder
         JButton results = new JButton("view results");
         results.setBorder(border);
         customerRegistration.setSize(800, 400);
@@ -143,24 +143,21 @@ public class PassengerInformation  extends JFrame implements EventListener {
         JLabel dateField = new JLabel("Manually enter numerical date");
         JTextField enteredDate = new JTextField(3);
 
-        //        enteredDate.setAlignmentX(JTextField.CENTER_ALIGNMENT);
         panelFields2.add(dateField);
         panelFields2.add(enteredDate);
 
         panelFields2.add(departure);
         panelFields2.add(flights);
         panelFields2.setBackground(Color.GRAY);
-//        panelFields2.add(date2);
-//        JLabel dateField = new JLabel("Manually enter numerical date");
-//        JTextField enteredDate = new JTextField(2);
-//        enteredDate.setMaximumSize(enteredDate.getPreferredSize());
-//        panelFields2.add(dateField);
-//        panelFields2.add(enteredDate);
         customerInfo2.add(panelFields2);
 
         //panel 3 below here
         JButton continueButton = new JButton("continue");
         JButton searchTrips = new JButton("Search");
+        searchTrips.setForeground(Color.BLUE);
+        searchTrips.setFont(new Font("Arial", Font.PLAIN, 24));
+        continueButton.setForeground(Color.GREEN);
+        continueButton.setFont(new Font("Arial", Font.PLAIN, 36));
         searchTrips.addActionListener( new ActionListener()
         {
             @Override
