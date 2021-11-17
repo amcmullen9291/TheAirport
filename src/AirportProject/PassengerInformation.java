@@ -23,8 +23,9 @@ public class PassengerInformation  extends JFrame implements EventListener {
     static PassengerInformation register;
     static JFrame customerRegistration;
     static PurchasedTicketSearch searchBox;
+    static PurchasedTicket purchase;
 
-//don't mind the colors or spacing, just setting things up
+    //don't mind the colors or spacing, just setting things up
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
         searchBox = new PurchasedTicketSearch(); //new
@@ -156,6 +157,14 @@ public class PassengerInformation  extends JFrame implements EventListener {
         searchTrips.setFont(new Font("Arial", Font.PLAIN, 24));
         continueButton.setForeground(Color.GREEN);
         continueButton.setFont(new Font("Arial", Font.PLAIN, 36));
+        continueButton.addActionListener( new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                purchase.setVisible(true);
+            }
+        });
         searchTrips.addActionListener( new ActionListener()
         {
             @Override
