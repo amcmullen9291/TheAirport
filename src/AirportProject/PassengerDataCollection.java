@@ -19,7 +19,7 @@ public class PassengerDataCollection implements Serializable {
     static HashMap<String, String> purchasedTicket = new HashMap<>();
     public static PassengerDataCollection guestInformation;
     public static String origin;
-    static PurchasedTicket ticketSold;
+    public static PurchasedTicket ticketSold;
 
     public PassengerDataCollection(String fullName, String email, String phone, String gender, int age, Date date, String origin, String destination, String departureTime,double ticketPrice){
         this.fullName = fullName;

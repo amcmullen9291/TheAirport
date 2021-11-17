@@ -24,7 +24,7 @@ public class PurchasedTicket {
         ticket.getContentPane().setForeground(Color.decode("#1D16B0"));
         ticket.setResizable(false);
         ticket.setVisible(false);
-
+            //@setup JFRAME with .setText from static Passenger instance?
     }
 
 //moved to Data Collection Class

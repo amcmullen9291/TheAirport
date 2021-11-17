@@ -33,7 +33,7 @@ public class BoardingPassTicket {
      */
     private static long ticketNumber = 10000000; // change to randomGeneratedNumber
     private long passNumber = 10000000;
-    private static final double basePrice = 1000;
+    private static double basePrice = 1000;
     private String ticketFilename;
     static PassengerDataCollection guest;
 
@@ -98,7 +98,7 @@ public class BoardingPassTicket {
         passenger.departureTime= sc.nextLine();
 //        setDepartureTime(sc.nextLine());
 
-        calculatePrice(passenger.gender, passenger.age);
+        passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age);
 
 //        ticketFilename = String.format("%s_%s.txt", passNumber, FullName.toUpperCase());
 
@@ -222,14 +222,14 @@ public class BoardingPassTicket {
         double price = basePrice;
 
         if (age <= 12) {
-            passenger.ticketPrice = (price-= 0.5 * price);
+            passenger.ticketPrice = (basePrice - (0.5 * basePrice));
         } else if (age >= 60) {
-            passenger.ticketPrice  = (price-= 0.6 * price);
+            passenger.ticketPrice  = (basePrice- (0.6 * basePrice));
         } else if (gender.equalsIgnoreCase("female")) {
-            passenger.ticketPrice = (price -= 0.25 * price);
-        }
+            passenger.ticketPrice = (basePrice - (0.25 * basePrice));
+        } //should be a second if; a person COULD be over 60 and a female
 
-        return price;
+        return (int)passenger.ticketPrice;
     }
 //    public void generateTicket() throws IOException {
 //        PrintWriter writer = new PrintWriter(new FileWriter(ticketFilename));
