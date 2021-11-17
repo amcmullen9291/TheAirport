@@ -26,6 +26,8 @@ public class BoardingPassTicket {
     private String destination;
     private String departureTime;
     private double ticketPrice;
+    public static BoardingPassTicket boardingPass;
+//    static BoardingPassTicket passengerTicket;
     /**
      * Number of the boarding pass ticket (start with 10000000)
      */
@@ -33,6 +35,7 @@ public class BoardingPassTicket {
     private long passNumber;
     private final double basePrice = 1000;
     private String ticketFilename;
+    static PassengerDataCollection guest;
 
     private Scanner sc = new Scanner(System.in);
 
