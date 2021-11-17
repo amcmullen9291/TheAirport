@@ -162,7 +162,9 @@ public class PassengerInformation  extends JFrame implements EventListener {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                purchase.setVisible(true);
+                purchase.ticket.setVisible(true);
+                customerRegistration.setVisible(false);
+
             }
         });
         searchTrips.addActionListener( new ActionListener()
@@ -188,6 +190,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         System.out.println("Welcome to our Airport!");
         passengerInformation();
         searchBox.purchasedTicketSearch();
+        purchase.purchasedTicket();
     }
 
 

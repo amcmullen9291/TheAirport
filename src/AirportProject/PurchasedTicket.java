@@ -13,10 +13,11 @@ public class PurchasedTicket {
     static double discount = 0.00;
     static double ticketPrice;
     static JFrame ticket;
+    static PassengerInformation passenger;
 
     public static void purchasedTicket(){
         ticket = new JFrame("Purchased Ticket");
-        Border border = new LineBorder(Color.decode("#DD0A0A"), 13); // red boarder
+        Border border = new LineBorder(Color.decode("#DD0A0A"), 13);
         JButton results = new JButton("view results");
         results.setBorder(border);
         ticket.setSize(800, 400);
@@ -49,5 +50,6 @@ public class PurchasedTicket {
 
     public void setVisible(boolean b) {
         ticket.setVisible(b);
+//        passenger.customerRegistration.setVisible(false);
     }
 }
