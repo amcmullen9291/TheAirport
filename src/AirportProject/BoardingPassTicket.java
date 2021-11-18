@@ -76,8 +76,19 @@ public class BoardingPassTicket {
         passenger.origin = "OurAirport";
 
         // Ask user to enter destination
-        System.out.print("Enter Destination: "); // give the 2 options (plus other)
-        passenger.destination = sc.nextLine();
+        System.out.println("Enter Destination: "); // give the 2 options (plus other)
+        System.out.println("Enter 1 for ORD - Chicago O'Hare airport");
+        System.out.println("Enter 2 for MSP - Minneapolis St. Paul");
+        String destination = sc.nextLine();
+        switch(destination){
+            case "1":
+                passenger.destination = "ORD, Chicago O'Hare";
+                break;
+            case "2":
+                passenger.destination = "MSP Minneapolis St Paul";
+                break;
+        }
+//        passenger.destination = sc.nextLine();
 
         // Ask user to enter departure time
         System.out.print("Enter Departure Time (HH:MM): "); //give 3 time options+plus other(4other give time)
@@ -91,20 +102,14 @@ public class BoardingPassTicket {
     public static double calculatePrice(String gender, int age ) {
         float price = 1000F;
         //define passenger.ticketPrice again here
+        if (gender.equalsIgnoreCase("female")) {
+            passenger.ticketPrice = price - (0.25 * price);
+        }
         if (age <= 12) {
             passenger.ticketPrice = price - (0.5 * price);
-//            if (gender.equalsIgnoreCase("female")) {
-//                passenger.ticketPrice = price - (0.25 * price);
-//            }
         }
         if (age >= 60) {
             passenger.ticketPrice  = price - (0.6 * price);
-//            if (gender.equalsIgnoreCase("female")) {
-//                passenger.ticketPrice = price - (0.25 * price);
-//            }
-        }
-        if (gender.equalsIgnoreCase("female")) {
-            passenger.ticketPrice = price - (0.25 * price);
         }
 
         return passenger.ticketPrice;
