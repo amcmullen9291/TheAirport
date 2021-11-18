@@ -64,35 +64,34 @@ public class PurchasedTicket {
         String timeOfDeparture = PassengerDataCollection.purchasedTicket.get("DepartureTime");
         String eta = PassengerDataCollection.purchasedTicket.get("Arrival Time");
 
-
+        ticket.setLayout(new GridLayout(1, 2));
         JPanel collectedInformation = new JPanel();
-        collectedInformation.setLayout(new GridLayout(12, 1));
-        JLabel name = new JLabel("Name:");
-        JTextField nameArea = new JTextField(20);
-        nameArea.setText(fullName);
+        collectedInformation.setLayout(new GridLayout(12, 2));
+        JLabel spaceHolder = new JLabel(" ");
+        JLabel name = new JLabel("Name: " + fullName);
 
         JLabel dateOfTicket = new JLabel(ticketDate);
         JLabel ticketLabel = new JLabel("Boarding pass number: " + ticketNumber);
         JLabel priceOf = new JLabel("Ticket price: " + "$"+ticketPrice +"0");
+        JLabel tripDetails = new JLabel("Leaving from: " + origin);
+        JLabel tripDetails2 = new JLabel("Departing at: " + timeOfDeparture);
+        JLabel tripDetails3 = new JLabel("Going to: " + destination);
+        JLabel tripDetails4 = new JLabel("Arriving at: " + eta);
 
-
-        JLabel email = new JLabel("Email Address:");
-        JTextField emailArea = new JTextField(30);
-        emailArea.setText(customerEmail);
-
-        JLabel phone = new JLabel("Phone number:");
-        JTextField phoneArea = new JTextField(20);
-        phoneArea.setText(phoneNumber);
+        JLabel email = new JLabel("Email Address: " + customerEmail);
+        JLabel phone = new JLabel("Phone number: " + phoneNumber);
 
         collectedInformation.add(dateOfTicket);
         collectedInformation.add(ticketLabel);
         collectedInformation.add(priceOf);
         collectedInformation.add(name);
-        collectedInformation.add(nameArea);
         collectedInformation.add(email);
-        collectedInformation.add(emailArea);
         collectedInformation.add(phone);
-        collectedInformation.add(phoneArea);
+        collectedInformation.add(spaceHolder);
+        collectedInformation.add(tripDetails);
+        collectedInformation.add(tripDetails2);
+        collectedInformation.add(tripDetails3);
+        collectedInformation.add(tripDetails4);
 
         ticket.add(collectedInformation);
         ticket.setVisible(true);
