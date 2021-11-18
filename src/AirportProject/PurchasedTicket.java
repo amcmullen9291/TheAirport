@@ -43,6 +43,9 @@ public class PurchasedTicket {
                 System.out.println("Ticket purchased saved.");
                 try {
                     saveTicket();
+                    String[] reset = {};
+                    ticket.setVisible(false);
+                    PassengerInformation.main(reset);
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
@@ -127,6 +130,8 @@ public class PurchasedTicket {
         customerInformation = passenger.getCustomerInfo();
     }
     private static void saveTicket() throws FileNotFoundException {
+        String newString = "";
+        String line = " ";
         File file = new File("src/AirportProject/purchased_tickets.txt");
 
         BufferedWriter writer = null;
@@ -141,7 +146,9 @@ public class PurchasedTicket {
                 // new line
                 writer.newLine();
             }
-
+            writer.write("--------------------");
+            newString = newString+line+"\n";
+            writer.write(newString);
             writer.flush();
         }
         catch (IOException e) {

@@ -22,3 +22,53 @@ PurchaseDate:2021-11-18 13:55:26
 Gender:male
 Age:48
 Name:John Doe
+Origin:OurAirport
+Destination:MSP Minneapolis St Paul
+DepartureTime:6:30pm
+Arrival Time:7:20pm
+ticketNumber:J49RZFR3W
+Email:wrting@writer.com
+Price:600.0
+Phone:456 456 8763
+PurchaseDate:2021-11-18 14:08:58
+Gender:male
+Age:31
+Name:Test Case
+--------------------Origin:OurAirport
+Destination:MSP Minneapolis St Paul
+DepartureTime:11:00am
+Arrival Time:1:15pm
+ticketNumber:UW0A7N7YK
+Email:abc@abcdefg.com
+Price:600.0
+Phone:123 765 9875
+PurchaseDate:2021-11-18 14:11:16
+Gender:male
+Age:38
+Name:Random Name
+--------------------Origin:OurAirport
+Destination:ORD, Chicago O'Hare
+DepartureTime:6:00am
+Arrival Time:7:15am
+ticketNumber:WPHA58IXJ
+Email:working@fine.com
+Price:400.0
+Phone:123 456 1234
+PurchaseDate:2021-11-18 14:12:48
+Gender:male
+Age:12
+Name:SHould be
+--------------------
+Origin:OurAirport
+Destination:MSP Minneapolis St Paul
+DepartureTime:11:00am
+Arrival Time:1:15pm
+ticketNumber:5AHDTMV1C
+Email:it@putsaSpace.com
+Price:600.0
+Phone:123 123 7654
+PurchaseDate:2021-11-18 14:18:00
+Gender:male
+Age:15
+Name:now hopefully
+-------------------- 
