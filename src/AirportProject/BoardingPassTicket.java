@@ -53,7 +53,7 @@ public class BoardingPassTicket {
             System.out.println("Enter full name. ");
             nameEntered = sc.nextLine();
         }
-        passenger.fullName = sc.nextLine();
+        passenger.fullName = nameEntered;
 
         // Ask user to enter email
         System.out.print("Enter Email: ");

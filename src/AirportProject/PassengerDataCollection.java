@@ -66,7 +66,7 @@ public class PassengerDataCollection implements Serializable {
             salt.append(ticketNumber.charAt(index));
         }
         guestInformation.ticketNumber = salt.toString();
-        purchasedTicket.put("Ticket Number: ", guestInformation.ticketNumber);
+        purchasedTicket.put("ticketNumber", guestInformation.ticketNumber);
 
     }
     public static HashMap<String, String> getCustomerInfo() {

@@ -51,9 +51,26 @@ public class PurchasedTicket {
     }
 
     public static void showData(){
-        //@setup JFrame with .setText from static purchasedTicket HashMap values
+        //declaring values for .setText
+        String fullName = PassengerDataCollection.purchasedTicket.get("Name");
+        String phoneNumber = PassengerDataCollection.purchasedTicket.get("Phone");
+        String customerEmail = PassengerDataCollection.purchasedTicket.get("Email");
+        String origin = PassengerDataCollection.purchasedTicket.get("Origin");
         String destination = PassengerDataCollection.purchasedTicket.get("Destination");
-        System.out.println("customer's destination: " + destination);
+        String eta = PassengerDataCollection.purchasedTicket.get("Arrival Time");
+        String ticketPrice = PassengerDataCollection.purchasedTicket.get("Price");
+        String ticketNumber = PassengerDataCollection.purchasedTicket.get("ticketNumber");
+
+        JPanel collectedInformation = new JPanel();
+        JLabel name = new JLabel("Full Name");
+        JTextField nameArea = new JTextField(45);
+        nameArea.setText(ticketNumber);
+        collectedInformation.add(name);
+        collectedInformation.add(nameArea);
+//        collectedInformation.repaint();
+//        collectedInformation.validate();
+        ticket.add(collectedInformation);
+        ticket.setVisible(true);
     }
 
     public void setVisible(boolean b) {
