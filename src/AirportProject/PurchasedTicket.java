@@ -6,7 +6,11 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
@@ -30,6 +34,20 @@ public class PurchasedTicket {
 
         JButton resetButton = new JButton("Cancel");
         JButton printTicket = new JButton("Process"); // goes to the BufferedWriter()
+
+        printTicket.addActionListener( new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("Ticket purchased saved.");
+                try {
+                    saveTicket();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
         resetButton.addActionListener( new ActionListener()
         {
             @Override
@@ -107,5 +125,36 @@ public class PurchasedTicket {
     }
     private static void fetchCustomerData() {
         customerInformation = passenger.getCustomerInfo();
+    }
+    private static void saveTicket() throws FileNotFoundException {
+        File file = new File("src/AirportProject/purchased_tickets.txt");
+
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(file));
+            for (Map.Entry<String, String> entry :
+                    PassengerDataCollection.purchasedTicket.entrySet()) {
+                writer.write(entry.getKey() + ":"
+                        + entry.getValue());
+
+                // new line
+                writer.newLine();
+            }
+
+            writer.flush();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+
+            try {
+
+                writer.close();
+            }
+            catch (Exception e) {
+            }
+        }
     }
 }

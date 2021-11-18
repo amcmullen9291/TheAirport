@@ -82,11 +82,11 @@ public class BoardingPassTicket {
         System.out.println("2.) Female");
         String passengerGender = sc.nextLine();
         switch(passengerGender){
-            case "Male":
-                passenger.gender = "Male";
+            case "1":
+                passenger.gender = "male";
                 break;
-            case "Female":
-                passenger.gender = "Female";
+            case "2":
+                passenger.gender = "female";
                 break;
             default:
                 passenger.gender = "Unanswered";
@@ -173,11 +173,14 @@ public class BoardingPassTicket {
         if (gender.equalsIgnoreCase("female")) {
             passenger.ticketPrice = price - (0.25 * price);
         }
-        if (age <= 12) {
+         else if (age <= 12) {
             passenger.ticketPrice = price - (0.5 * price);
         }
-        if (age >= 60) {
+        else if (age >= 60) {
             passenger.ticketPrice  = price - (0.6 * price);
+        }
+        else{
+            passenger.ticketPrice = price;
         }
 
         return passenger.ticketPrice;
