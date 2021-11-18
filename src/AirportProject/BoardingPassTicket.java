@@ -26,7 +26,7 @@ public class BoardingPassTicket {
      */
     private static long ticketNumber = 10000000; // change to randomGeneratedNumber
     private long passNumber = 10000000;
-    private static double basePrice = 1000.00; //change price to based on destination
+    private static int basePrice = 1000; //change price to based on destination
 //    private String ticketFilename;
     static PassengerDataCollection guest;
 
@@ -89,16 +89,24 @@ public class BoardingPassTicket {
     } // sends collected data to constructor
 
     public static double calculatePrice(String gender, int age ) {
-        double price = basePrice;
+        float price = 1000F;
         //define passenger.ticketPrice again here
         if (age <= 12) {
-            passenger.ticketPrice = (basePrice - (0.5 * basePrice));
-        } else if (age >= 60) {
-            passenger.ticketPrice  = (basePrice- (0.6 * basePrice));
-        } else if (gender.equalsIgnoreCase("female")) {
-            passenger.ticketPrice = (basePrice - (0.25 * basePrice));
-        } //should be a second if; a person COULD be over 60 and a female
+            passenger.ticketPrice = price - (0.5 * price);
+//            if (gender.equalsIgnoreCase("female")) {
+//                passenger.ticketPrice = price - (0.25 * price);
+//            }
+        }
+        if (age >= 60) {
+            passenger.ticketPrice  = price - (0.6 * price);
+//            if (gender.equalsIgnoreCase("female")) {
+//                passenger.ticketPrice = price - (0.25 * price);
+//            }
+        }
+        if (gender.equalsIgnoreCase("female")) {
+            passenger.ticketPrice = price - (0.25 * price);
+        }
 
-        return (int)passenger.ticketPrice;
+        return passenger.ticketPrice;
     }
 }
