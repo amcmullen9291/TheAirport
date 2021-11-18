@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class PurchasedTicket {
@@ -15,7 +17,7 @@ public class PurchasedTicket {
     public static HashMap<String, String> customerInformation;
 
     public static void purchasedTicket(){
-        ticket = new JFrame("Purchased Ticket");
+        ticket = new JFrame("Purchase Ticket");
         Border border = new LineBorder(Color.decode("#DD0A0A"), 13);
         JButton results = new JButton("view results");
         results.setBorder(border);
@@ -24,6 +26,27 @@ public class PurchasedTicket {
         ticket.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ticket.getContentPane().setBackground(Color.decode("#1D16B0"));
         ticket.getContentPane().setForeground(Color.decode("#1D16B0"));
+        JPanel pane = new JPanel();
+        pane.setLayout(new BoxLayout(pane, BoxLayout.LINE_AXIS));
+        pane.setBackground(Color.GRAY);
+
+        JButton resetButton = new JButton("Cancel");
+        JButton printTicket = new JButton("Process"); // goes to the BufferedWriter()
+        resetButton.addActionListener( new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                String[] reset = {};
+                PassengerInformation.main(reset);
+            }
+        });
+
+        pane.add(resetButton);
+        pane.add(Box.createHorizontalGlue());
+        pane.add(printTicket);
+
+        ticket.add(pane, BorderLayout.SOUTH);
         ticket.setResizable(false);
         ticket.setVisible(false);
     }
