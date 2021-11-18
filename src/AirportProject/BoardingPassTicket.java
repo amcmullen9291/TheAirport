@@ -55,8 +55,21 @@ public class BoardingPassTicket {
         passenger.phone = sc.nextLine();
 
         // Ask user to enter gender
-        System.out.print("Enter Gender: "); //give choices, male or female
-        passenger.gender = sc.nextLine();
+        System.out.println("Enter Passenger Gender: "); //give choices, male or female
+        System.out.println("1.) Male");
+        System.out.println("2.) Female");
+        String passengerGender = sc.nextLine();
+        switch(passengerGender){
+            case "Male":
+                passenger.gender = "Male";
+                break;
+            case "Female":
+                passenger.gender = "Female";
+                break;
+            default:
+                passenger.gender = "Unanswered";
+        }
+//        passenger.gender = sc.nextLine();
 
         // Ask user to enter age
         System.out.print("Enter Age: "); //change to birth year
@@ -72,13 +85,13 @@ public class BoardingPassTicket {
         String placeHolder = sc.nextLine();
 
         // Ask user to enter origin
-//        System.out.print("Enter Origin: "); // only option is "ourAirport"
         passenger.origin = "OurAirport";
 
         // Ask user to enter destination
         System.out.println("Enter Destination: "); // give the 2 options (plus other)
         System.out.println("Enter 1 for ORD - Chicago O'Hare airport");
         System.out.println("Enter 2 for MSP - Minneapolis St. Paul");
+        System.out.println("Enter 3 for other locations");
         String destination = sc.nextLine();
         switch(destination){
             case "1":
@@ -87,12 +100,38 @@ public class BoardingPassTicket {
             case "2":
                 passenger.destination = "MSP Minneapolis St Paul";
                 break;
+            case "3":
+                passenger.destination = "Other";
+                break;
+
+            default:
+                passenger.destination = "Other location";
         }
-//        passenger.destination = sc.nextLine();
 
         // Ask user to enter departure time
-        System.out.print("Enter Departure Time (HH:MM): "); //give 3 time options+plus other(4other give time)
-        passenger.departureTime= sc.nextLine();
+        System.out.println("Enter Departure Time (HH:MM): ");
+        System.out.println("1.) 6am departure ");
+        System.out.println("2.) 11am departure");
+        System.out.println("3.) 6:30pm departure");
+        System.out.println("4.) Other");
+        String departureTime = sc.nextLine();
+        switch(departureTime){
+            case "1":
+                passenger.departureTime = "6:00am";
+                break;
+            case "2":
+                passenger.departureTime = "11:00am";
+                break;
+            case "3":
+                passenger.departureTime = "6:30pm";
+                break;
+            case "4":
+                passenger.departureTime = "Other";
+                break;
+
+            default:
+                passenger.departureTime = "00:00";
+        }
 
         passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age, passenger.destination);
 
