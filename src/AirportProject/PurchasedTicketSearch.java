@@ -14,6 +14,8 @@ import java.util.Map;
 public class PurchasedTicketSearch implements EventListener {
 
     static JFrame searchBox;
+    public static String emailSearch;
+    static int i = 1;
 
     public static void purchasedTicketSearch() {
         Border border = new LineBorder(Color.GRAY, 8);
@@ -26,17 +28,15 @@ public class PurchasedTicketSearch implements EventListener {
             public void actionPerformed(ActionEvent e) {
                 searchBox.setVisible(false);
                 //check if required fields are empty
-                if((!PassengerInformation.emailArea.getText().equals(""))|| (!PassengerInformation.emailArea.getText().equals(""))) {
-                    String emailSearch = PassengerInformation.emailArea.getText();
-                    String lastNameSearch = PassengerInformation.nameArea2.getText();
-                    ;
+                if(!PassengerInformation.emailArea.getText().equals("")) {
+                    emailSearch = PassengerInformation.emailArea.getText();
                     try {
-                        searchTickets(emailSearch, lastNameSearch);
+                        searchTickets(emailSearch);
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }
                 }else{
-                    System.out.println("Last name and email are required for search");
+                    System.out.println("A valid Email is required for search");
                 }
             }
         });
@@ -54,10 +54,11 @@ public class PurchasedTicketSearch implements EventListener {
         searchBox.setVisible(b);
     }
 
-    public static Map searchTickets(String passengerEmail, String lastName) throws FileNotFoundException {
+    public static void searchTickets(String passengerEmail) throws FileNotFoundException {
         Map<String, String> mapFileContents = new HashMap<String, String>();
         BufferedReader br = null;
-
+        System.out.println("searching for " + passengerEmail );
+        System.out.println(" ");
         try{
 
             //create file object
@@ -66,14 +67,16 @@ public class PurchasedTicketSearch implements EventListener {
             //create BufferedReader object from the File
             br = new BufferedReader( new FileReader(file) );
 
-            String line = null;
+            String line = br.readLine();
 
             //read file line by line
             while ( (line = br.readLine()) != null ){
-
                 //put name, age in HashMap if they are not empty
-                if( (line.contains(passengerEmail)) || (line.contains(lastName)) )
-                    mapFileContents.put("found", "Entry found");
+                    if(line.contains(passengerEmail)){
+                        System.out.println(emailSearch + " found " + i + " times");
+//                        mapFileContents.put(emailSearch, " found");
+                        i++;
+                }
             }
 
         }catch(Exception e){
@@ -86,7 +89,7 @@ public class PurchasedTicketSearch implements EventListener {
                 }catch(Exception e){};
             }
         }
-        System.out.println(mapFileContents);
-        return mapFileContents;
+//        System.out.println(mapFileContents);
+//        return mapFileContents;
     }
 }
