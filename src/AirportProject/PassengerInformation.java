@@ -23,11 +23,10 @@ public class PassengerInformation  extends JFrame implements EventListener {
     static PurchasedTicketSearch searchBox;
     static PurchasedTicket purchase;
 
-    //don't mind the colors or spacing, just setting things up
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
         searchBox = new PurchasedTicketSearch(); //new
-        Border border = new LineBorder(Color.decode("#DD0A0A"), 13); // red boarder
+        Border border = new LineBorder(Color.decode("#DD0A0A"), 13);
         JButton results = new JButton("view results");
         results.setBorder(border);
         customerRegistration.setSize(800, 400);
@@ -43,11 +42,11 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields1.setSize(175,350);
         JPanel panelFields2 = new JPanel();
         panelFields2.setLayout(new GridLayout(3,1));
-//        panelFields2.setSize(175,350);
+
         JPanel panelField3 = new JPanel();
         panelFields2.setLayout(new GridLayout(12,1)); //new
         panelField3.setLayout(new GridLayout(2,1));
-//setLocation was here
+
         panel.setSize(550,350);
         panel.setBorder(border);
         JPanel customerInfo1 = new JPanel();
@@ -89,7 +88,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         customerInfo1.add(panelFields1);
         panel.add(customerInfo1);
 
-        // start panel 2 here?
+        // start panel 2 here
         JLabel dateLabel = new JLabel("Today's Date:");
         JPanel customerInfo2 = new JPanel(new GridBagLayout());
         customerInfo2.setBackground(Color.decode("#100B7A"));
@@ -136,7 +135,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.add(spacer);
         panelFields2.add(chooseMonth);
         panelFields2.add(monthList);
-//        panelFields2.add(spacer);
+
         JLabel dateField = new JLabel("Manually enter numerical date");
         JTextField enteredDate = new JTextField(3);
 
@@ -161,7 +160,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-//                purchase.ticket.setVisible(true);
                 customerRegistration.setVisible(false);
                 BoardingPassTicket pass = new BoardingPassTicket();
                     pass.BoardingPassTicket();
