@@ -94,13 +94,15 @@ public class BoardingPassTicket {
         System.out.print("Enter Departure Time (HH:MM): "); //give 3 time options+plus other(4other give time)
         passenger.departureTime= sc.nextLine();
 
-        passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age);
+        passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age, passenger.destination);
 
         guest = new PassengerDataCollection(passenger.fullName, passenger.email, passenger.phone, passenger.gender, passenger.age, passenger.date, passenger.origin,passenger.destination, passenger.departureTime, passenger.ticketPrice );
     } // sends collected data to constructor
 
-    public static double calculatePrice(String gender, int age ) {
+    public static double calculatePrice(String gender, int age, String destination ) {
         float price = 1000F;
+        if(destination.equals("ORD, Chicago O'Hare")){price = 800F;}
+        if(destination.equals("MSP Minneapolis St Paul")){price = 600F;}
         //define passenger.ticketPrice again here
         if (gender.equalsIgnoreCase("female")) {
             passenger.ticketPrice = price - (0.25 * price);
