@@ -67,6 +67,10 @@ public class PurchasedTicket {
         JTextField nameArea = new JTextField(20);
         nameArea.setText(fullName);
 
+        JLabel ticketLabel = new JLabel("Boarding pass number: " + ticketNumber);
+        JLabel priceOf = new JLabel("Sold for: " + ticketPrice);
+
+
         JLabel email = new JLabel("Email Address:");
         JTextField emailArea = new JTextField(30);
         emailArea.setText(customerEmail);
@@ -75,7 +79,8 @@ public class PurchasedTicket {
         JTextField phoneArea = new JTextField(20);
         phoneArea.setText(phoneNumber);
 
-
+        collectedInformation.add(ticketLabel);
+        collectedInformation.add(priceOf);
         collectedInformation.add(name);
         collectedInformation.add(nameArea);
         collectedInformation.add(email);
