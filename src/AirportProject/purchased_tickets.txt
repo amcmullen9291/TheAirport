@@ -72,3 +72,18 @@ Gender:male
 Age:15
 Name:now hopefully
 -------------------- 
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+{Origin=OurAirport, Destination=ORD, Chicago O'Hare, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=I70AIG0TT, Email=totalHashMap@insertion.com, Price=400.0, Phone=789 654 7234, PurchaseDate=2021-11-18 15:02:33, Gender=male, Age=1, Name=Testing HashMap}
+-------------------- 
+{Origin=OurAirport, Destination=MSP Minneapolis St Paul, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=TNQ77UHJ5, Email=amcmullen@gmail.com, Price=300.0, Phone=123 456 2347, PurchaseDate=2021-11-18 15:03:47, Gender=male, Age=1, Name=Anthony}
+-------------------- 

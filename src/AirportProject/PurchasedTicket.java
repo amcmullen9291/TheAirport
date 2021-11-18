@@ -143,7 +143,10 @@ public class PurchasedTicket {
                 writer.write(entry.getKey() + ":"
                         + entry.getValue());
 
-                // new line
+                // puts entire HashMap on one line
+//                writer.write(String.valueOf(PassengerDataCollection.purchasedTicket));
+
+//                // new line
                 writer.newLine();
             }
             writer.write("--------------------");
