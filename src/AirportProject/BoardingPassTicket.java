@@ -6,8 +6,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BoardingPassTicket {
+
+    static Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     static PassengerDataCollection passenger;
     //    public static String FullName;
@@ -48,7 +52,15 @@ public class BoardingPassTicket {
 
         // Ask user to enter email
         System.out.print("Enter Email: ");
-        passenger.email =sc.nextLine();
+        String usersEnteredEmail = sc.nextLine();
+        Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(usersEnteredEmail);
+        boolean matches = matcher.matches();
+        while(!isValid(usersEnteredEmail)) {
+                System.out.println("Please enter a valid Email address");
+                usersEnteredEmail = sc.nextLine();
+            }
+        passenger.email = usersEnteredEmail;
 
         // Ask user to enter phone
         System.out.print("Enter Phone Number: ");
@@ -160,5 +172,14 @@ public class BoardingPassTicket {
 
         return passenger.ticketPrice;
     }
-
+    private static boolean isValid(String usersEnteredEmail) {
+        Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(usersEnteredEmail);
+        boolean matches = matcher.matches();
+        if (!matches) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

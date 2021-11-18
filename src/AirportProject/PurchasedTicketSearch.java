@@ -7,8 +7,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.EventListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PurchasedTicketSearch implements EventListener {
+
     static JFrame searchBox;
 
     public static void purchasedTicketSearch(){
