@@ -80,6 +80,7 @@ public class PurchasedTicket {
 
         JLabel email = new JLabel("Email Address: " + customerEmail);
         JLabel phone = new JLabel("Phone number: " + phoneNumber);
+        JLabel bottomSpacer = new JLabel("---------------------");
 
         collectedInformation.add(dateOfTicket);
         collectedInformation.add(ticketLabel);
@@ -92,6 +93,7 @@ public class PurchasedTicket {
         collectedInformation.add(tripDetails2);
         collectedInformation.add(tripDetails3);
         collectedInformation.add(tripDetails4);
+        collectedInformation.add(bottomSpacer);
 
         ticket.add(collectedInformation);
         ticket.setVisible(true);
