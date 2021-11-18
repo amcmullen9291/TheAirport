@@ -132,7 +132,7 @@ public class PurchasedTicket {
         BufferedWriter writer = null;
 
         try {
-            writer = new BufferedWriter(new FileWriter(file));
+            writer = new BufferedWriter(new FileWriter(file, true));
             for (Map.Entry<String, String> entry :
                     PassengerDataCollection.purchasedTicket.entrySet()) {
                 writer.write(entry.getKey() + ":"

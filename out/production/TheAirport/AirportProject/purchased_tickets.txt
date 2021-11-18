@@ -1,12 +1,12 @@
 Origin:OurAirport
-Destination:MSP Minneapolis St Paul
-DepartureTime:11:00am
-Arrival Time:1:15pm
-ticketNumber:AXLWRSLMP
-Email:Anthony@gmail.com
-Price:0.0
+Destination:ORD, Chicago O'Hare
+DepartureTime:6:00am
+Arrival Time:7:15am
+ticketNumber:OO5BEROTM
+Email:amcmullen9291@gmail.com
+Price:800.0
 Phone:123 123 1234
-PurchaseDate:2021-11-18 13:40:23
-Gender:Male
+PurchaseDate:2021-11-18 13:51:00
+Gender:male
 Age:41
-Name:Anthony
+Name:Anthony McMullen
