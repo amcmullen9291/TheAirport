@@ -22,6 +22,8 @@ public class PassengerInformation  extends JFrame implements EventListener {
     static JFrame customerRegistration;
     static PurchasedTicketSearch searchBox;
     static PurchasedTicket purchase;
+    public static JTextField emailArea;
+    public static JTextField nameArea2;
 
     public static void passengerInformation(){
         customerRegistration = new JFrame("Our Airport");
@@ -54,10 +56,10 @@ public class PassengerInformation  extends JFrame implements EventListener {
         JLabel name = new JLabel("Last Name");
         JTextField nameArea = new JTextField(15);
         JLabel name2 = new JLabel("First Name");
-        JTextField nameArea2 = new JTextField(12);
+        nameArea2 = new JTextField(12);
         JTextField spacer = new JTextField(12);
         JLabel email = new JLabel("Email");
-        JTextField emailArea = new JTextField(15);// add validations
+        emailArea = new JTextField(15);// add validations
         JLabel phone = new JLabel("phone");
         JTextField phoneNumberArea = new JTextField(14); // add validations
         JLabel age = new JLabel("Birth year");
