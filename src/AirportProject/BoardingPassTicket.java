@@ -47,7 +47,12 @@ public class BoardingPassTicket {
     public static void readInputs() {
 
         // Ask user to enter name
-        System.out.print("Enter FullName: ");
+        System.out.print("Enter full name: ");
+        String nameEntered = sc.nextLine();
+        while(!isValidName(nameEntered)) {
+            System.out.println("Enter full name. ");
+            nameEntered = sc.nextLine();
+        }
         passenger.fullName = sc.nextLine();
 
         // Ask user to enter email
@@ -55,7 +60,7 @@ public class BoardingPassTicket {
         String usersEnteredEmail = sc.nextLine();
         Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(usersEnteredEmail);
-        boolean matches = matcher.matches();
+//        boolean matches = matcher.matches();
         while(!isValid(usersEnteredEmail)) {
                 System.out.println("Please enter a valid Email address");
                 usersEnteredEmail = sc.nextLine();
@@ -198,4 +203,16 @@ public class BoardingPassTicket {
             return true;
         }
     }
+    private static boolean isValidName(String usersEnteredName) {
+        String validName = "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$";
+        Pattern pattern = Pattern.compile(validName);
+        Matcher matcher = pattern.matcher(usersEnteredName);
+        boolean matches = matcher.matches();
+        if (!matches) { // allows for a return keystroke between first and last name
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
