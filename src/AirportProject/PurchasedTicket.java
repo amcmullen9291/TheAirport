@@ -52,14 +52,18 @@ public class PurchasedTicket {
 
     public static void showData(){
         //declaring values for .setText
+        String ticketDate = PassengerDataCollection.purchasedTicket.get("PurchaseDate");
+        String ticketPrice = PassengerDataCollection.purchasedTicket.get("Price");
+        String ticketNumber = PassengerDataCollection.purchasedTicket.get("ticketNumber");
+
         String fullName = PassengerDataCollection.purchasedTicket.get("Name");
         String phoneNumber = PassengerDataCollection.purchasedTicket.get("Phone");
         String customerEmail = PassengerDataCollection.purchasedTicket.get("Email");
         String origin = PassengerDataCollection.purchasedTicket.get("Origin");
         String destination = PassengerDataCollection.purchasedTicket.get("Destination");
+        String timeOfDeparture = PassengerDataCollection.purchasedTicket.get("DepartureTime");
         String eta = PassengerDataCollection.purchasedTicket.get("Arrival Time");
-        String ticketPrice = PassengerDataCollection.purchasedTicket.get("Price");
-        String ticketNumber = PassengerDataCollection.purchasedTicket.get("ticketNumber");
+
 
         JPanel collectedInformation = new JPanel();
         collectedInformation.setLayout(new GridLayout(12, 1));
@@ -67,8 +71,9 @@ public class PurchasedTicket {
         JTextField nameArea = new JTextField(20);
         nameArea.setText(fullName);
 
+        JLabel dateOfTicket = new JLabel(ticketDate);
         JLabel ticketLabel = new JLabel("Boarding pass number: " + ticketNumber);
-        JLabel priceOf = new JLabel("Sold for: " + ticketPrice);
+        JLabel priceOf = new JLabel("Ticket price: " + "$"+ticketPrice +"0");
 
 
         JLabel email = new JLabel("Email Address:");
@@ -79,6 +84,7 @@ public class PurchasedTicket {
         JTextField phoneArea = new JTextField(20);
         phoneArea.setText(phoneNumber);
 
+        collectedInformation.add(dateOfTicket);
         collectedInformation.add(ticketLabel);
         collectedInformation.add(priceOf);
         collectedInformation.add(name);

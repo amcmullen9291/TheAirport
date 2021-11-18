@@ -44,10 +44,10 @@ public class PassengerDataCollection implements Serializable {
         purchasedTicket.put("Phone", phone);
         purchasedTicket.put("Gender", gender);
         purchasedTicket.put("Age", String.valueOf(age)); //change to year born
-        purchasedTicket.put("Purchase Date", String.valueOf(date));
+        purchasedTicket.put("PurchaseDate", String.valueOf(date));
         purchasedTicket.put("Origin", origin);
         purchasedTicket.put("Destination", destination);
-        purchasedTicket.put("Departure Time", departureTime);
+        purchasedTicket.put("DepartureTime", departureTime);
         purchasedTicket.put("Price", String.valueOf(ticketPrice));
         purchasedTicket.put("Arrival Time", arrivalTime);
         getTicketString();
