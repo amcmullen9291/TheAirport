@@ -118,24 +118,29 @@ public class BoardingPassTicket {
         switch(departureTime){
             case "1":
                 passenger.departureTime = "6:00am";
+                passenger.arrivalTime = "7:15am";
                 break;
             case "2":
                 passenger.departureTime = "11:00am";
+                passenger.arrivalTime = "1:15pm";
                 break;
             case "3":
                 passenger.departureTime = "6:30pm";
+                passenger.arrivalTime = "7:20pm";
                 break;
             case "4":
                 passenger.departureTime = "Other";
+                passenger.arrivalTime = "unlisted";
                 break;
 
             default:
                 passenger.departureTime = "00:00";
+                passenger.arrivalTime = "00:00";
         }
 
         passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age, passenger.destination);
 
-        guest = new PassengerDataCollection(passenger.fullName, passenger.email, passenger.phone, passenger.gender, passenger.age, passenger.date, passenger.origin,passenger.destination, passenger.departureTime, passenger.ticketPrice );
+        guest = new PassengerDataCollection(passenger.fullName, passenger.email, passenger.phone, passenger.gender, passenger.age, passenger.date, passenger.origin,passenger.destination, passenger.departureTime, passenger.ticketPrice, passenger.arrivalTime );
     } // sends collected data to constructor
 
     public static double calculatePrice(String gender, int age, String destination ) {
@@ -155,4 +160,5 @@ public class BoardingPassTicket {
 
         return passenger.ticketPrice;
     }
+
 }

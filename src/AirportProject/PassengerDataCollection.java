@@ -20,8 +20,9 @@ public class PassengerDataCollection implements Serializable {
     public static PassengerDataCollection guestInformation;
     public static String origin;
     public static PurchasedTicket ticketSold;
+    public static String arrivalTime;
 
-    public PassengerDataCollection(String fullName, String email, String phone, String gender, int age, String date, String origin, String destination, String departureTime,double ticketPrice){
+    public PassengerDataCollection(String fullName, String email, String phone, String gender, int age, String date, String origin, String destination, String departureTime,double ticketPrice, String arrivalTime){
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
@@ -32,6 +33,7 @@ public class PassengerDataCollection implements Serializable {
         this.departureTime = departureTime;
         this.ticketPrice = ticketPrice;
         this.origin = origin;
+        this.arrivalTime = arrivalTime;
         registerTicket();
         getCustomerInfo();
         ticketSold.showData();
@@ -48,6 +50,7 @@ public class PassengerDataCollection implements Serializable {
         purchasedTicket.put("Destination", destination);
         purchasedTicket.put("Departure Time", departureTime);
         purchasedTicket.put("Price", String.valueOf(ticketPrice));
+        purchasedTicket.put("Arrival Time", arrivalTime);
         getTicketString();
         System.out.println("Ticket Information: " + purchasedTicket);
         ticketSold = new PurchasedTicket();

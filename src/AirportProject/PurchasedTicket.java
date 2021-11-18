@@ -10,8 +10,6 @@ import java.util.HashMap;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
-//    static double discount = 0.00;
-//    static double ticketPrice;
     static JFrame ticket;
     static PassengerDataCollection passenger;
     public static HashMap<String, String> customerInformation;
@@ -38,6 +36,7 @@ public class PurchasedTicket {
             public void actionPerformed(ActionEvent e)
             {
                 String[] reset = {};
+                ticket.setVisible(false);
                 PassengerInformation.main(reset);
             }
         });
