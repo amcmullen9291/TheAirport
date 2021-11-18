@@ -62,13 +62,27 @@ public class PurchasedTicket {
         String ticketNumber = PassengerDataCollection.purchasedTicket.get("ticketNumber");
 
         JPanel collectedInformation = new JPanel();
-        JLabel name = new JLabel("Full Name");
-        JTextField nameArea = new JTextField(45);
-        nameArea.setText(ticketNumber);
+        collectedInformation.setLayout(new GridLayout(12, 1));
+        JLabel name = new JLabel("Name:");
+        JTextField nameArea = new JTextField(20);
+        nameArea.setText(fullName);
+
+        JLabel email = new JLabel("Email Address:");
+        JTextField emailArea = new JTextField(30);
+        emailArea.setText(customerEmail);
+
+        JLabel phone = new JLabel("Phone number:");
+        JTextField phoneArea = new JTextField(20);
+        phoneArea.setText(phoneNumber);
+
+
         collectedInformation.add(name);
         collectedInformation.add(nameArea);
-//        collectedInformation.repaint();
-//        collectedInformation.validate();
+        collectedInformation.add(email);
+        collectedInformation.add(emailArea);
+        collectedInformation.add(phone);
+        collectedInformation.add(phoneArea);
+
         ticket.add(collectedInformation);
         ticket.setVisible(true);
     }
