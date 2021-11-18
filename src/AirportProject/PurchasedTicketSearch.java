@@ -26,7 +26,7 @@ public class PurchasedTicketSearch implements EventListener {
             public void actionPerformed(ActionEvent e) {
                 searchBox.setVisible(false);
                 //check if required fields are empty
-                if((PassengerInformation.emailArea.getText().equals(""))|| (PassengerInformation.emailArea.getText().equals(""))) {
+                if((!PassengerInformation.emailArea.getText().equals(""))|| (!PassengerInformation.emailArea.getText().equals(""))) {
                     String emailSearch = PassengerInformation.emailArea.getText();
                     String lastNameSearch = PassengerInformation.nameArea2.getText();
                     ;
@@ -71,15 +71,8 @@ public class PurchasedTicketSearch implements EventListener {
             //read file line by line
             while ( (line = br.readLine()) != null ){
 
-                //split the line by :
-                String[] parts = line.split(":");
-
-                //first part is name, second is age
-                String search = parts[1].trim();
-                Integer age = Integer.parseInt( parts[1].trim() );
-
                 //put name, age in HashMap if they are not empty
-                if( (search.equals(passengerEmail)) || (search.equals(lastName)) )
+                if( (line.contains(passengerEmail)) || (line.contains(lastName)) )
                     mapFileContents.put("found", "Entry found");
             }
 
@@ -93,6 +86,7 @@ public class PurchasedTicketSearch implements EventListener {
                 }catch(Exception e){};
             }
         }
+        System.out.println(mapFileContents);
         return mapFileContents;
     }
 }
