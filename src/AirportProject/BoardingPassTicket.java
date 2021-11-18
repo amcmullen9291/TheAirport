@@ -64,7 +64,12 @@ public class BoardingPassTicket {
 
         // Ask user to enter phone
         System.out.print("Enter Phone Number: ");
-        passenger.phone = sc.nextLine();
+        String enteredPhoneNumber = sc.nextLine();
+        while(!isValidPhone(enteredPhoneNumber)) {
+            System.out.println("enter a valid format");
+            enteredPhoneNumber = sc.nextLine();
+        }
+        passenger.phone = enteredPhoneNumber;
 
         // Ask user to enter gender
         System.out.println("Enter Passenger Gender: "); //give choices, male or female
@@ -175,6 +180,17 @@ public class BoardingPassTicket {
     private static boolean isValid(String usersEnteredEmail) {
         Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(usersEnteredEmail);
+        boolean matches = matcher.matches();
+        if (!matches) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    private static boolean isValidPhone(String usersEnteredPhone) {
+        String validPhoneNumber = "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$";
+        Pattern pattern = Pattern.compile(validPhoneNumber);
+        Matcher matcher = pattern.matcher(usersEnteredPhone);
         boolean matches = matcher.matches();
         if (!matches) {
             return false;
