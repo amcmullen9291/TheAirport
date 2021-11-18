@@ -8,8 +8,8 @@ import java.util.HashMap;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
-    static double discount = 0.00;
-    static double ticketPrice;
+//    static double discount = 0.00;
+//    static double ticketPrice;
     static JFrame ticket;
     static PassengerDataCollection passenger;
     public static HashMap<String, String> customerInformation;
@@ -26,24 +26,10 @@ public class PurchasedTicket {
         ticket.getContentPane().setForeground(Color.decode("#1D16B0"));
         ticket.setResizable(false);
         ticket.setVisible(false);
-            //@setup JFRAME with .setText from static Passenger instance?
-        //test
-        fetchCustomerData();
     }
 
-//moved to Data Collection Class
-//    public void getTicketString() { // just a suggestion for randomly generated boardingPass Number
-//        String ticketNumber = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-//        StringBuilder salt = new StringBuilder();
-//        Random rnd = new Random();
-//        while (salt.length() < 9) { // length of the random string.
-//            int index = (int) (rnd.nextFloat() * ticketNumber.length());
-//            salt.append(ticketNumber.charAt(index));
-//        }
-//        ticketNumberString = salt.toString();
-//    }
-
     public static void showData(){
+        //@setup JFrame with .setText from static purchasedTicket HashMap values
         String destination = PassengerDataCollection.purchasedTicket.get("Destination");
         System.out.println("customer's destination: " + destination);
     }

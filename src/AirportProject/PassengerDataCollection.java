@@ -11,7 +11,7 @@ public class PassengerDataCollection implements Serializable {
     public static  String phone;
     public static String gender;
     public static int age;
-    public static Date date;
+    public static String date;
     public static String destination;
     public static String departureTime;
     public static double ticketPrice;
@@ -21,7 +21,7 @@ public class PassengerDataCollection implements Serializable {
     public static String origin;
     public static PurchasedTicket ticketSold;
 
-    public PassengerDataCollection(String fullName, String email, String phone, String gender, int age, Date date, String origin, String destination, String departureTime,double ticketPrice){
+    public PassengerDataCollection(String fullName, String email, String phone, String gender, int age, String date, String origin, String destination, String departureTime,double ticketPrice){
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
@@ -44,6 +44,7 @@ public class PassengerDataCollection implements Serializable {
         purchasedTicket.put("Gender", gender);
         purchasedTicket.put("Age", String.valueOf(age)); //change to year born
         purchasedTicket.put("Flight Date", String.valueOf(date));
+        purchasedTicket.put("Origin", origin);
         purchasedTicket.put("Destination", destination);
         purchasedTicket.put("Departure Time", departureTime);
         purchasedTicket.put("Price", String.valueOf(ticketPrice));
