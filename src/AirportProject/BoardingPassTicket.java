@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class BoardingPassTicket {
 
     static PassengerDataCollection passenger;
-//    public static String FullName;
+    //    public static String FullName;
 //    public static String email;
 //    public static String phone;
     public static String gender = passenger.gender;
@@ -27,7 +27,7 @@ public class BoardingPassTicket {
     private static long ticketNumber = 10000000; // change to randomGeneratedNumber
     private long passNumber = 10000000;
     private static int basePrice = 1000; //change price to based on destination
-//    private String ticketFilename;
+    //    private String ticketFilename;
     static PassengerDataCollection guest;
 
     static Scanner sc = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class BoardingPassTicket {
         ticketNumber++;
     }
 
-     // Method to read data of the passenger required to generate boarding pass ticket.
+    // Method to read data of the passenger required to generate boarding pass ticket.
     public static void readInputs() {
 
         // Ask user to enter name

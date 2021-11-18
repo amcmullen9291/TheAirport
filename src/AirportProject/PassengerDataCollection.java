@@ -43,7 +43,7 @@ public class PassengerDataCollection implements Serializable {
         purchasedTicket.put("Phone", phone);
         purchasedTicket.put("Gender", gender);
         purchasedTicket.put("Age", String.valueOf(age)); //change to year born
-        purchasedTicket.put("Flight Date", String.valueOf(date));
+        purchasedTicket.put("Purchase Date", String.valueOf(date));
         purchasedTicket.put("Origin", origin);
         purchasedTicket.put("Destination", destination);
         purchasedTicket.put("Departure Time", departureTime);
@@ -53,7 +53,7 @@ public class PassengerDataCollection implements Serializable {
         ticketSold = new PurchasedTicket();
         ticketSold.setVisible(true);
     }
-        // need to write data to file
+    // need to write data to file
 
     public static void getTicketString() { // just a suggestion for randomly generated boardingPass Number
         String ticketNumber = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
