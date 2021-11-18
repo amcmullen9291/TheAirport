@@ -16,6 +16,8 @@ public class PurchasedTicketSearch implements EventListener {
     static JFrame searchBox;
     public static String emailSearch;
     static int i = 1;
+    static String line = "";
+    static String lastDate = "";
 
     public static void purchasedTicketSearch() {
         Border border = new LineBorder(Color.GRAY, 8);
@@ -67,13 +69,17 @@ public class PurchasedTicketSearch implements EventListener {
             //create BufferedReader object from the File
             br = new BufferedReader( new FileReader(file) );
 
-            String line = br.readLine();
+            line = br.readLine();
 
             //read file line by line
             while ( (line = br.readLine()) != null ){
                 //put name, age in HashMap if they are not empty
                     if(line.contains(passengerEmail)){
+                        for(int x=1; x<4; x++) {
+                            lastDate = br.readLine();
+                        }
                         System.out.println(emailSearch + " found " + i + " times");
+                        System.out.println("Ticket found: " + lastDate);
 //                        mapFileContents.put(emailSearch, " found");
                         i++;
                 }
