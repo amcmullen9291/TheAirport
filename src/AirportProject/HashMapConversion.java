@@ -4,10 +4,15 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HashMapConversion {
-    static HashMap<String, String> fullResultList = new HashMap<>();
+    static String fullResultList = new String();
+    static HashMap<String, String> ticketHash;
+    static int i = 0;
 
     public static void getTicketInfo(String email) {
         {
@@ -27,7 +32,7 @@ public class HashMapConversion {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                String[] parts = line.split("=", 2);
+                String[] parts = line.split(":", 2);
                 if (line.contains(email)) {
                     if (parts.length >= 2) {
                         String key = parts[0];
@@ -39,8 +44,8 @@ public class HashMapConversion {
                 }
             }
             for (String key : map.keySet()) {
-                System.out.println(key + ":" + map.get(key));
-                fullResultList.put(key, map.get(key));
+//                System.out.println(key + ":" + map.get(key));
+                fullResultList = key + " " + map.get(key);
             }
             try {
                 reader.close();
@@ -48,5 +53,39 @@ public class HashMapConversion {
                 e.printStackTrace();
             }
         }
+        regexToHash(fullResultList);
     }
-}
+
+    public static void regexToHash(String informationHash){
+        ticketHash = new HashMap<String, String>();
+        String newInformationHash = informationHash.substring( 1, informationHash.length() - 1 );
+        System.out.println("original result: " + newInformationHash);
+        List<String> firstDivision = Arrays.asList(newInformationHash.split(":"));
+        String listString = "";
+        for (String s : firstDivision)
+        {
+            listString += s + "\t";
+        }
+        listString = listString.replace('=',':');
+        System.out.println("look here: " + listString);
+        ticketHash = finalConversion(listString);
+
+        }
+
+        public static HashMap<String, String> finalConversion(String originalString){
+            HashMap<String, String> usableTicketData = new HashMap<String, String>();
+
+            String parts[] = originalString.split(",");
+
+            for (String part : parts) {
+
+                String stringPortions[] = part.split(":");
+
+                String keyName = stringPortions[0].trim();
+                String keyValue = stringPortions[1].trim();
+
+                usableTicketData.put(keyName, keyValue);
+            }
+            return  usableTicketData;
+        }
+    }

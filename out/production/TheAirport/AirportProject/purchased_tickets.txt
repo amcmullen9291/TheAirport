@@ -63,3 +63,16 @@ Gender:male
 Age:41
 Name:David Swimmer
 -------------------- 
+Origin:OurAirport
+Destination:Other
+DepartureTime:Other
+Arrival Time:unlisted
+ticketNumber:QWBBGWHKB
+Email:handycode@work.net
+Price:1000.0
+Phone:567 567 5678
+PurchaseDate:2021-11-19 09:41:18
+Gender:male
+Age:52
+Name:Carl Jones
+-------------------- 
