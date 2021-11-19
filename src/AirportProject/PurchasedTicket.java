@@ -194,5 +194,7 @@ public class PurchasedTicket {
             }
         }
     }
-
+    //call purchaseTicket from HashMap Class
+    //hide the initial JFrame
+    //@ create new showData method with correct origin
 }
