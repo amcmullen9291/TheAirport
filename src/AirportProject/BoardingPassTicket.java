@@ -1,10 +1,7 @@
 package AirportProject;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,17 +11,8 @@ public class BoardingPassTicket {
     static Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     static PassengerDataCollection passenger;
-    //    public static String FullName;
-//    public static String email;
-//    public static String phone;
     public static String gender = passenger.gender;
     public static int age = passenger.age;
-//    public static Date date;
-//    public static String origin;
-//    public static String destination;
-//    public static String departureTime;
-//    public static double ticketPrice;
-//    public static BoardingPassTicket boardingPass;
     /**
      * Number of the boarding pass ticket (start with 10000000)
      */
@@ -60,7 +48,7 @@ public class BoardingPassTicket {
         String usersEnteredEmail = sc.nextLine();
         Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(usersEnteredEmail);
-//        boolean matches = matcher.matches();
+
         while(!isValid(usersEnteredEmail)) {
                 System.out.println("Please enter a valid Email address");
                 usersEnteredEmail = sc.nextLine();
@@ -91,7 +79,7 @@ public class BoardingPassTicket {
             default:
                 passenger.gender = "Unanswered";
         }
-//        passenger.gender = sc.nextLine();
+
 
         // Ask user to enter age
         System.out.print("Enter Age: "); //change to birth year

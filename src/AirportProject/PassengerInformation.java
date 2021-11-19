@@ -164,7 +164,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
             {
                 customerRegistration.setVisible(false);
                 BoardingPassTicket pass = new BoardingPassTicket();
-                    pass.BoardingPassTicket();
+                pass.BoardingPassTicket();
             }
         });
         searchTrips.addActionListener( new ActionListener()

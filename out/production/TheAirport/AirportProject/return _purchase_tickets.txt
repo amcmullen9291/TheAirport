@@ -1,0 +1,4 @@
+{Origin=OurAirport, Destination=MSP Minneapolis St Paul, DepartureTime=11:00am, Arrival Time=1:15pm, ticketNumber=L0JLTSTYA, Email=work@work.com, Price=600.0, Phone=234 234 2345, PurchaseDate=2021-11-19 09:00:18, Gender=male, Age=45, Name=Thomas Parker}
+ 
+{Origin=OurAirport, Destination=MSP Minneapolis St Paul, DepartureTime=6:00am, Arrival Time=7:15am, ticketNumber=ZG4VFC2KU, Email=home@here.com, Price=600.0, Phone=123 123 1234, PurchaseDate=2021-11-19 09:26:46, Gender=male, Age=41, Name=David Swimmer}
+ 

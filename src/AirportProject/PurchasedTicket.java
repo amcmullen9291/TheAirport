@@ -142,10 +142,6 @@ public class PurchasedTicket {
                     PassengerDataCollection.purchasedTicket.entrySet()) {
                 writer.write(entry.getKey() + ":"
                         + entry.getValue());
-
-                // puts entire HashMap on one line. working on this
-//                writer.write(String.valueOf(PassengerDataCollection.purchasedTicket));
-
                 // new line
                 writer.newLine();
             }
@@ -166,5 +162,37 @@ public class PurchasedTicket {
             catch (Exception e) {
             }
         }
+        saveTicketReadable();
     }
+
+    private static void saveTicketReadable() throws FileNotFoundException {
+        String newString = "";
+        String line = " ";
+        File file = new File("src/AirportProject/return _purchase_tickets.txt");
+
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(file, true));
+                writer.write(String.valueOf(PassengerDataCollection.purchasedTicket));
+                // new line
+                writer.newLine();
+            newString = newString+line+"\n";
+            writer.write(newString);
+            writer.flush();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+
+            try {
+
+                writer.close();
+            }
+            catch (Exception e) {
+            }
+        }
+    }
+
 }
