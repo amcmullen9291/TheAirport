@@ -7,12 +7,13 @@ public class HashMapConversion {
     static String fullResultList = new String();
     static HashMap<String, String> ticketHash;
     static int i = 0;
+    static String lineFromFile = "";
 
     static void checkIfEmailExists(String email) throws FileNotFoundException {
         File file  = new File("src/AirportProject/return _purchase_tickets.txt");
         final Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
-            final String lineFromFile = scanner.nextLine();
+            lineFromFile = scanner.nextLine();
             if(lineFromFile.contains(email)) {
                 // a match!
                 System.out.println(email + " found!");
@@ -20,7 +21,7 @@ public class HashMapConversion {
                 break;
             }
         }
-        System.out.println("Record not found.");
+        if(!lineFromFile.contains(email)){System.out.println("Record not found.");};
     }
 
     public static void getTicketInfo(String email) {
