@@ -57,19 +57,16 @@ public class HashMapConversion {
     }
 
     public static void regexToHash(String informationHash){
-        ticketHash = new HashMap<String, String>();
-        String newInformationHash = informationHash.substring( 1, informationHash.length() - 1 );
-        System.out.println("original result: " + newInformationHash);
-        List<String> firstDivision = Arrays.asList(newInformationHash.split(":"));
-        String listString = "";
-        for (String s : firstDivision)
-        {
-            listString += s + "\t";
-        }
-        listString = listString.replace('=',':');
-        System.out.println("look here: " + listString);
-        ticketHash = finalConversion(listString);
-
+            ticketHash = new HashMap<String, String>();
+            String newInformationHash = informationHash.substring(1, informationHash.length() - 1);
+            List<String> firstDivision = Arrays.asList(newInformationHash.split(":"));
+            String listString = "";
+            for (String s : firstDivision) {
+                listString += s + "\t";
+            }
+            listString = listString.replace('=', ':');
+            ticketHash = finalConversion(listString);
+            PurchasedTicket.showSearchResults();
         }
 
         public static HashMap<String, String> finalConversion(String originalString){

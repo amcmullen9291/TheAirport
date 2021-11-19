@@ -17,6 +17,7 @@ public class PurchasedTicket {
     static JFrame ticket;
     static PassengerDataCollection passenger;
     public static HashMap<String, String> customerInformation;
+    static JButton printTicket;
 
     public static void purchasedTicket(){
         ticket = new JFrame("Purchase Ticket");
@@ -33,7 +34,7 @@ public class PurchasedTicket {
         pane.setBackground(Color.GRAY);
 
         JButton resetButton = new JButton("Cancel");
-        JButton printTicket = new JButton("Process"); // goes to the BufferedWriter()
+        printTicket = new JButton("Process"); // goes to the BufferedWriter()
 
         printTicket.addActionListener( new ActionListener()
         {
@@ -194,6 +195,58 @@ public class PurchasedTicket {
             }
         }
     }
+
+    public static void showSearchResults(){
+        PassengerInformation.customerRegistration.setVisible(false);
+        printTicket.setEnabled(false);
+        //declaring values for .setText
+        String ticketDate = HashMapConversion.ticketHash.get("PurchaseDate");
+        String ticketPrice = HashMapConversion.ticketHash.get("Price");
+        String ticketNumber = HashMapConversion.ticketHash.get("ticketNumber");
+
+        String fullName = HashMapConversion.ticketHash.get("Name");
+        String phoneNumber = HashMapConversion.ticketHash.get("Phone");
+        String customerEmail = HashMapConversion.ticketHash.get("Email");
+        String origin = HashMapConversion.ticketHash.get("Origin");
+        String destination = HashMapConversion.ticketHash.get("Destination");
+        String timeOfDeparture = HashMapConversion.ticketHash.get("DepartureTime");
+        String eta = HashMapConversion.ticketHash.get("Arrival Time");
+
+        ticket.setLayout(new GridLayout(1, 2));
+        JPanel collectedInformation = new JPanel();
+        collectedInformation.setLayout(new GridLayout(12, 2));
+        JLabel spaceHolder = new JLabel(" ");
+        JLabel name = new JLabel("Name: " + fullName);
+
+        JLabel dateOfTicket = new JLabel(ticketDate);
+        JLabel ticketLabel = new JLabel("Boarding pass number: " + ticketNumber);
+        JLabel priceOf = new JLabel("Ticket price: " + "$"+ticketPrice +"0");
+        JLabel tripDetails = new JLabel("Leaving from: " + origin);
+        JLabel tripDetails2 = new JLabel("Departing at: " + timeOfDeparture);
+        JLabel tripDetails3 = new JLabel("Going to: " + destination);
+        JLabel tripDetails4 = new JLabel("Arriving at: " + eta);
+
+        JLabel email = new JLabel("Email Address: " + customerEmail);
+        JLabel phone = new JLabel("Phone number: " + phoneNumber);
+        JLabel bottomSpacer = new JLabel("---------------------");
+
+        collectedInformation.add(dateOfTicket);
+        collectedInformation.add(ticketLabel);
+        collectedInformation.add(priceOf);
+        collectedInformation.add(name);
+        collectedInformation.add(email);
+        collectedInformation.add(phone);
+        collectedInformation.add(spaceHolder);
+        collectedInformation.add(tripDetails);
+        collectedInformation.add(tripDetails2);
+        collectedInformation.add(tripDetails3);
+        collectedInformation.add(tripDetails4);
+        collectedInformation.add(bottomSpacer);
+
+        ticket.add(collectedInformation);
+        ticket.setVisible(true);
+    }
+
     //call purchaseTicket from HashMap Class
     //hide the initial JFrame
     //@ create new showData method with correct origin
