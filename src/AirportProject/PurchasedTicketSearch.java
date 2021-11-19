@@ -34,7 +34,7 @@ public class PurchasedTicketSearch implements EventListener {
                     emailSearch = PassengerInformation.emailArea.getText();
                     try {
                         searchTickets(emailSearch);
-                        HashMapConversion.getTicketInfo(emailSearch);
+                        HashMapConversion.checkIfEmailExists(emailSearch);
                     } catch (FileNotFoundException ex) {
                         ex.printStackTrace();
                     }

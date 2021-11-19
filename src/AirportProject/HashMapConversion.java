@@ -1,18 +1,27 @@
 package AirportProject;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 public class HashMapConversion {
     static String fullResultList = new String();
     static HashMap<String, String> ticketHash;
     static int i = 0;
+
+    static void checkIfEmailExists(String email) throws FileNotFoundException {
+        File file  = new File("src/AirportProject/return _purchase_tickets.txt");
+        final Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            final String lineFromFile = scanner.nextLine();
+            if(lineFromFile.contains(email)) {
+                // a match!
+                System.out.println(email + " found!");
+                getTicketInfo(email);
+                break;
+            }
+        }
+        System.out.println("Record not found.");
+    }
 
     public static void getTicketInfo(String email) {
         {
@@ -57,32 +66,32 @@ public class HashMapConversion {
     }
 
     public static void regexToHash(String informationHash){
-            ticketHash = new HashMap<String, String>();
-            String newInformationHash = informationHash.substring(1, informationHash.length() - 1);
-            List<String> firstDivision = Arrays.asList(newInformationHash.split(":"));
-            String listString = "";
-            for (String s : firstDivision) {
-                listString += s + "\t";
-            }
-            listString = listString.replace('=', ':');
-            ticketHash = finalConversion(listString);
-            PurchasedTicket.showSearchResults();
+        ticketHash = new HashMap<String, String>();
+        String newInformationHash = informationHash.substring(1, informationHash.length() - 1);
+        List<String> firstDivision = Arrays.asList(newInformationHash.split(":"));
+        String listString = "";
+        for (String s : firstDivision) {
+            listString += s + "\t";
         }
-
-        public static HashMap<String, String> finalConversion(String originalString){
-            HashMap<String, String> usableTicketData = new HashMap<String, String>();
-
-            String parts[] = originalString.split(",");
-
-            for (String part : parts) {
-
-                String stringPortions[] = part.split(":");
-
-                String keyName = stringPortions[0].trim();
-                String keyValue = stringPortions[1].trim();
-
-                usableTicketData.put(keyName, keyValue);
-            }
-            return  usableTicketData;
-        }
+        listString = listString.replace('=', ':');
+        ticketHash = finalConversion(listString);
+        PurchasedTicket.showSearchResults();
     }
+
+    public static HashMap<String, String> finalConversion(String originalString){
+        HashMap<String, String> usableTicketData = new HashMap<String, String>();
+
+        String parts[] = originalString.split(",");
+
+        for (String part : parts) {
+
+            String stringPortions[] = part.split(":");
+
+            String keyName = stringPortions[0].trim();
+            String keyValue = stringPortions[1].trim();
+
+            usableTicketData.put(keyName, keyValue);
+        }
+        return  usableTicketData;
+    }
+}
