@@ -8,10 +8,11 @@ public class HashMapConversion {
     static HashMap<String, String> ticketHash;
     static int i = 0;
     static String lineFromFile = "";
+    static Scanner scanner = null;
 
     static void checkIfEmailExists(String email) throws FileNotFoundException {
         File file  = new File("src/AirportProject/return _purchase_tickets.txt");
-        final Scanner scanner = new Scanner(file);
+        scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
             lineFromFile = scanner.nextLine();
             if(lineFromFile.contains(email)) {

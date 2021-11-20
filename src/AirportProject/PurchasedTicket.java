@@ -8,9 +8,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
@@ -18,6 +27,7 @@ public class PurchasedTicket {
     static PassengerDataCollection passenger;
     public static HashMap<String, String> customerInformation;
     static JButton printTicket;
+    static Scanner scanner;
 
     public static void purchasedTicket(){
         ticket = new JFrame("Purchase Ticket");
@@ -47,7 +57,7 @@ public class PurchasedTicket {
                     String[] reset = {};
                     ticket.setVisible(false);
                     PassengerInformation.main(reset);
-                } catch (FileNotFoundException ex) {
+                } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
@@ -130,7 +140,7 @@ public class PurchasedTicket {
     private static void fetchCustomerData() {
         customerInformation = passenger.getCustomerInfo();
     }
-    private static void saveTicket() throws FileNotFoundException {
+    private static void saveTicket() throws IOException {
         String newString = "";
         String line = " ";
         File file = new File("src/AirportProject/purchased_tickets.txt");
@@ -166,8 +176,10 @@ public class PurchasedTicket {
         saveTicketReadable();
     }
 
-    private static void saveTicketReadable() throws FileNotFoundException {
-        String newString = "";
+    private static void saveTicketReadable() throws IOException {
+        //check if email exists in file, find and replace so search() only finds one instance
+
+    String newString = "";
         String line = " ";
         File file = new File("src/AirportProject/return _purchase_tickets.txt");
 

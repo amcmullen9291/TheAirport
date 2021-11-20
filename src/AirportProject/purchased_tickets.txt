@@ -1,14 +1,27 @@
 
 Origin:OurAirport
-Destination:Other
-DepartureTime:1100am
-Arrival Time:115pm
-ticketNumber:C5VNAO27N
-Email:handycode@work.net
-Price:1000.0
+Destination:ORD Chicago O'Hare
+DepartureTime:600am
+Arrival Time:715am
+ticketNumber:MIJ25A8T3
+Email:anthony@home.com
+Price:400.0
 Phone:123 123 1234
-PurchaseDate:2021-11-19 19:47:10
+PurchaseDate:2021-11-20 04:24:30
 Gender:male
-Age:42
-Name:Handy Andy
+Age:1
+Name:Anthony McMullen
+-------------------- 
+Origin:OurAirport
+Destination:ORD Chicago O'Hare
+DepartureTime:600am
+Arrival Time:715am
+ticketNumber:AMSD40ODH
+Email:anthony@home.com
+Price:400.0
+Phone:123 123 1234
+PurchaseDate:2021-11-20 04:25:07
+Gender:male
+Age:1
+Name:Anthony McMullen
 -------------------- 
