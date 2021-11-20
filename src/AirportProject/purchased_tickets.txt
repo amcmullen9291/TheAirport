@@ -1,0 +1,14 @@
+
+Origin:OurAirport
+Destination:Other
+DepartureTime:1100am
+Arrival Time:115pm
+ticketNumber:C5VNAO27N
+Email:handycode@work.net
+Price:1000.0
+Phone:123 123 1234
+PurchaseDate:2021-11-19 19:47:10
+Gender:male
+Age:42
+Name:Handy Andy
+-------------------- 

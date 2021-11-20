@@ -50,9 +50,9 @@ public class BoardingPassTicket {
         Matcher matcher = pattern.matcher(usersEnteredEmail);
 
         while(!isValid(usersEnteredEmail)) {
-                System.out.println("Please enter a valid Email address");
-                usersEnteredEmail = sc.nextLine();
-            }
+            System.out.println("Please enter a valid Email address");
+            usersEnteredEmail = sc.nextLine();
+        }
         passenger.email = usersEnteredEmail;
 
         // Ask user to enter phone
@@ -105,7 +105,7 @@ public class BoardingPassTicket {
         String destination = sc.nextLine();
         switch(destination){
             case "1":
-                passenger.destination = "ORD, Chicago O'Hare";
+                passenger.destination = "ORD Chicago O'Hare";
                 break;
             case "2":
                 passenger.destination = "MSP Minneapolis St Paul";
@@ -127,16 +127,16 @@ public class BoardingPassTicket {
         String departureTime = sc.nextLine();
         switch(departureTime){
             case "1":
-                passenger.departureTime = "6:00am";
-                passenger.arrivalTime = "7:15am";
+                passenger.departureTime = "600am";
+                passenger.arrivalTime = "715am";
                 break;
             case "2":
-                passenger.departureTime = "11:00am";
-                passenger.arrivalTime = "1:15pm";
+                passenger.departureTime = "1100am";
+                passenger.arrivalTime = "115pm";
                 break;
             case "3":
-                passenger.departureTime = "6:30pm";
-                passenger.arrivalTime = "7:20pm";
+                passenger.departureTime = "630pm";
+                passenger.arrivalTime = "720pm";
                 break;
             case "4":
                 passenger.departureTime = "Other";
@@ -144,8 +144,8 @@ public class BoardingPassTicket {
                 break;
 
             default:
-                passenger.departureTime = "00:00";
-                passenger.arrivalTime = "00:00";
+                passenger.departureTime = "0000";
+                passenger.arrivalTime = "0000";
         }
 
         passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age, passenger.destination);
@@ -155,13 +155,13 @@ public class BoardingPassTicket {
 
     public static double calculatePrice(String gender, int age, String destination ) {
         float price = 1000F;
-        if(destination.equals("ORD, Chicago O'Hare")){price = 800F;}
+        if(destination.equals("ORD Chicago O'Hare")){price = 800F;}
         if(destination.equals("MSP Minneapolis St Paul")){price = 600F;}
         //define passenger.ticketPrice again here
         if (gender.equalsIgnoreCase("female")) {
             passenger.ticketPrice = price - (0.25 * price);
         }
-         else if (age <= 12) {
+        else if (age <= 12) {
             passenger.ticketPrice = price - (0.5 * price);
         }
         else if (age >= 60) {

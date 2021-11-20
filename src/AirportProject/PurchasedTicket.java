@@ -175,9 +175,9 @@ public class PurchasedTicket {
 
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
-                writer.write(String.valueOf(PassengerDataCollection.purchasedTicket));
-                // new line
-                writer.newLine();
+            writer.write(String.valueOf(PassengerDataCollection.purchasedTicket));
+            // new line
+            writer.newLine();
             newString = newString+line+"\n";
             writer.write(newString);
             writer.flush();

@@ -21,7 +21,6 @@ public class HashMapConversion {
                 break;
             }
         }
-        if(!lineFromFile.contains(email)){System.out.println("Record not found.");};
     }
 
     public static void getTicketInfo(String email) {
