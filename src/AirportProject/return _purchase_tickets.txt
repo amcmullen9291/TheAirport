@@ -1,4 +1,2 @@
-{Origin=OurAirport, Destination=ORD Chicago O'Hare, DepartureTime=600am, Arrival Time=715am, ticketNumber=MIJ25A8T3, Email=anthony@home.com, Price=400.0, Phone=123 123 1234, PurchaseDate=2021-11-20 04:24:30, Gender=male, Age=1, Name=Anthony McMullen}
- 
-{Origin=OurAirport, Destination=ORD Chicago O'Hare, DepartureTime=600am, Arrival Time=715am, ticketNumber=AMSD40ODH, Email=anthony@home.com, Price=400.0, Phone=123 123 1234, PurchaseDate=2021-11-20 04:25:07, Gender=male, Age=1, Name=Anthony McMullen}
+{Origin=OurAirport, Destination=MSP Minneapolis St Paul, DepartureTime=1100am, Arrival Time=115pm, ticketNumber=14CKGF04D, Email=here@here.com, Price=600.0, Phone=123 123 1234, PurchaseDate=2021-11-22 09:23:59, Gender=male, Age=42, Name=Anthony McMullen}
  

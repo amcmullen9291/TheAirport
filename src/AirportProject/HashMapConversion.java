@@ -2,6 +2,7 @@ package AirportProject;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class HashMapConversion {
     static String fullResultList = new String();
@@ -43,8 +44,8 @@ public class HashMapConversion {
                     e.printStackTrace();
                 }
                 String[] parts = line.split(":", 2);
-                if (line.contains(email)) {
-                    if (parts.length >= 2) {
+                if (line.contains(email)) { //note: the simple search just overwrites. think about that. move
+                    if (parts.length >= 2) {  //static fullResultList to that method to get last instance?
                         String key = parts[0];
                         String value = parts[1];
                         map.put(key, value);

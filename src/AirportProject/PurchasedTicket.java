@@ -51,7 +51,7 @@ public class PurchasedTicket {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                System.out.println("Ticket purchased saved.");
+                System.out.println("Ticket purchase saved.");
                 try {
                     saveTicket();
                     String[] reset = {};

@@ -75,14 +75,12 @@ public class PurchasedTicketSearch implements EventListener {
 
             //read file line by line
             while ( (line = br.readLine()) != null ){
-                //put name, age in HashMap if they are not empty
                 if(line.contains(passengerEmail)){
                     for(int x=1; x<4; x++) {
                         lastDate = br.readLine();
                     }
                     System.out.println(emailSearch + " found " + i + " times");
                     System.out.println("Ticket found: " + lastDate);
-//                        mapFileContents.put(emailSearch, " found");
                     i++;
                 }
             }
