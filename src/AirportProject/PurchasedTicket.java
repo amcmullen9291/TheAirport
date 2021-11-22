@@ -178,7 +178,8 @@ public class PurchasedTicket {
 
     private static void saveTicketReadable() throws IOException {
         //check if email exists in file, find and replace so search() only finds one instance
-
+        String customerEmail = "Email="+ PassengerDataCollection.purchasedTicket.get("Email");
+        removeDuplicateEmails(customerEmail, "Done");
     String newString = "";
         String line = " ";
         File file = new File("src/AirportProject/return _purchase_tickets.txt");
@@ -262,4 +263,58 @@ public class PurchasedTicket {
     //call purchaseTicket from HashMap Class
     //hide the initial JFrame
     //@ create new showData method with correct origin
+
+    public static void removeDuplicateEmails(String oldString, String newString)
+    {
+        File fileToBeModified = new File("src/AirportProject/return _purchase_tickets.txt");
+
+        String oldContent =oldString;
+
+        BufferedReader reader2 = null;
+
+        FileWriter writer2 = null;
+
+        try
+        {
+            reader2 = new BufferedReader(new FileReader(fileToBeModified));
+
+            //Reading all the lines of input text file into oldContent
+
+            String line = reader2.readLine();
+
+            while (line != null)
+            {
+                oldContent = oldContent + line + System.lineSeparator();
+
+                line = reader2.readLine();
+            }
+
+            //Replacing oldString with newString in the oldContent
+
+            String newContent = oldContent.replaceAll(oldString, "done");
+
+            //Rewriting the input text file with newContent
+
+            writer2 = new FileWriter(fileToBeModified);
+
+            writer2.write(newContent);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                reader2.close();
+
+                writer2.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 }
