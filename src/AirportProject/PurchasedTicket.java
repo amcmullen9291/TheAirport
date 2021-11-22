@@ -7,19 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class PurchasedTicket {
     static PurchasedTicket PurchasedTicket;
@@ -44,7 +34,7 @@ public class PurchasedTicket {
         pane.setBackground(Color.GRAY);
 
         JButton resetButton = new JButton("Cancel");
-        printTicket = new JButton("Process"); // goes to the BufferedWriter()
+        printTicket = new JButton("Process");
 
         printTicket.addActionListener( new ActionListener()
         {
@@ -153,7 +143,7 @@ public class PurchasedTicket {
                     PassengerDataCollection.purchasedTicket.entrySet()) {
                 writer.write(entry.getKey() + ":"
                         + entry.getValue());
-                // new line
+
                 writer.newLine();
             }
             writer.write("--------------------");
@@ -177,7 +167,6 @@ public class PurchasedTicket {
     }
 
     private static void saveTicketReadable() throws IOException {
-        //check if email exists in file, find and replace so search() only finds one instance
         String customerEmail = "Email="+ PassengerDataCollection.purchasedTicket.get("Email");
         removeDuplicateEmails(customerEmail, "Done");
     String newString = "";
@@ -212,7 +201,7 @@ public class PurchasedTicket {
     public static void showSearchResults(){
         PassengerInformation.customerRegistration.setVisible(false);
         printTicket.setEnabled(false);
-        //declaring values for .setText
+
         String ticketDate = HashMapConversion.ticketHash.get("PurchaseDate");
         String ticketPrice = HashMapConversion.ticketHash.get("Price");
         String ticketNumber = HashMapConversion.ticketHash.get("ticketNumber");
@@ -260,10 +249,6 @@ public class PurchasedTicket {
         ticket.setVisible(true);
     }
 
-    //call purchaseTicket from HashMap Class
-    //hide the initial JFrame
-    //@ create new showData method with correct origin
-
     public static void removeDuplicateEmails(String oldString, String newString)
     {
         File fileToBeModified = new File("src/AirportProject/return _purchase_tickets.txt");
@@ -278,7 +263,6 @@ public class PurchasedTicket {
         {
             reader2 = new BufferedReader(new FileReader(fileToBeModified));
 
-            //Reading all the lines of input text file into oldContent
 
             String line = reader2.readLine();
 
@@ -289,11 +273,9 @@ public class PurchasedTicket {
                 line = reader2.readLine();
             }
 
-            //Replacing oldString with newString in the oldContent
 
             String newContent = oldContent.replaceAll(oldString, "done");
 
-            //Rewriting the input text file with newContent
 
             writer2 = new FileWriter(fileToBeModified);
 

@@ -6,15 +6,12 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.EventListener;
-
-//import java.time.LocalTime;
 
 
 public class PassengerInformation  extends JFrame implements EventListener {
@@ -90,7 +87,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
         customerInfo1.add(panelFields1);
         panel.add(customerInfo1);
 
-        // start panel 2 here
         JLabel dateLabel = new JLabel("Today's Date:");
         JPanel customerInfo2 = new JPanel(new GridBagLayout());
         customerInfo2.setBackground(Color.decode("#100B7A"));
@@ -110,7 +106,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.add(date2);
         panelFields2.add(dateLabel);
         panelFields2.add(date);
-        //Calendar
+
         JLabel chooseMonth = new JLabel("Choose A Month:");
         String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         final JComboBox<String> monthList = new JComboBox<String>(months);
@@ -123,7 +119,7 @@ public class PassengerInformation  extends JFrame implements EventListener {
         flights.setMaximumSize(gender.getPreferredSize());
         flights.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        //airlines
+
         JLabel airlinesLabel = new JLabel("Airline", SwingConstants.CENTER);
         String[] airlines = {"AirExpress", "Kalamazoo Airlines", "Private Charter"};
         final JComboBox<String> airlinesList = new JComboBox<String>(airlines);
@@ -149,8 +145,6 @@ public class PassengerInformation  extends JFrame implements EventListener {
         panelFields2.setBackground(Color.GRAY);
         customerInfo2.add(panelFields2);
 
-
-        //panel 3 below here
         JButton continueButton = new JButton("Continue");
         JButton searchTrips = new JButton("Search");
         searchTrips.setForeground(Color.BLUE);

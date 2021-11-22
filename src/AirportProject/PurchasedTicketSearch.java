@@ -29,7 +29,7 @@ public class PurchasedTicketSearch implements EventListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 searchBox.setVisible(false);
-                //check if required fields are empty
+
                 if(!PassengerInformation.emailArea.getText().equals("")) {
                     emailSearch = PassengerInformation.emailArea.getText();
                     try {
@@ -65,15 +65,15 @@ public class PurchasedTicketSearch implements EventListener {
         System.out.println(" ");
         try{
 
-            //create file object
+
             File file = new File("src/AirportProject/purchased_tickets.txt");
 
-            //create BufferedReader object from the File
+
             br = new BufferedReader( new FileReader(file) );
 
             line = br.readLine();
 
-            //read file line by line
+
             while ( (line = br.readLine()) != null ){
                 if(line.contains(passengerEmail)){
                     for(int x=1; x<4; x++) {
@@ -95,7 +95,5 @@ public class PurchasedTicketSearch implements EventListener {
                 }catch(Exception e){};
             }
         }
-//        System.out.println(mapFileContents);
-//        return mapFileContents;
     }
 }

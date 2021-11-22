@@ -55,7 +55,6 @@ public class PassengerDataCollection implements Serializable {
         ticketSold = new PurchasedTicket();
         ticketSold.setVisible(true);
     }
-    // need to write data to file
 
     public static void getTicketString() { // just a suggestion for randomly generated boardingPass Number
         String ticketNumber = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

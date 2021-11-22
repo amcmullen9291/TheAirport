@@ -16,10 +16,10 @@ public class BoardingPassTicket {
     /**
      * Number of the boarding pass ticket (start with 10000000)
      */
-    private static long ticketNumber = 10000000; // change to randomGeneratedNumber
+    private static long ticketNumber = 10000000;
     private long passNumber = 10000000;
-    private static int basePrice = 1000; //change price to based on destination
-    //    private String ticketFilename;
+    private static int basePrice = 1000;
+
     static PassengerDataCollection guest;
 
     static Scanner sc = new Scanner(System.in);
@@ -31,10 +31,8 @@ public class BoardingPassTicket {
         ticketNumber++;
     }
 
-    // Method to read data of the passenger required to generate boarding pass ticket.
     public static void readInputs() {
 
-        // Ask user to enter name
         System.out.print("Enter full name: ");
         String nameEntered = sc.nextLine();
         while(!isValidName(nameEntered)) {
@@ -43,7 +41,6 @@ public class BoardingPassTicket {
         }
         passenger.fullName = nameEntered;
 
-        // Ask user to enter email
         System.out.print("Enter Email: ");
         String usersEnteredEmail = sc.nextLine();
         Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -55,7 +52,6 @@ public class BoardingPassTicket {
         }
         passenger.email = usersEnteredEmail;
 
-        // Ask user to enter phone
         System.out.print("Enter Phone Number: ");
         String enteredPhoneNumber = sc.nextLine();
         while(!isValidPhone(enteredPhoneNumber)) {
@@ -64,7 +60,6 @@ public class BoardingPassTicket {
         }
         passenger.phone = enteredPhoneNumber;
 
-        // Ask user to enter gender
         System.out.println("Enter Passenger Gender: "); //give choices, male or female
         System.out.println("1.) Male");
         System.out.println("2.) Female");
@@ -81,11 +76,9 @@ public class BoardingPassTicket {
         }
 
 
-        // Ask user to enter age
-        System.out.print("Enter Age: "); //change to birth year
+        System.out.print("Enter Age: ");
         passenger.age = sc.nextByte();
 
-        // adding user's purchase date
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -94,10 +87,8 @@ public class BoardingPassTicket {
         System.out.println("-----------------");
         String placeHolder = sc.nextLine();
 
-        // Ask user to enter origin
         passenger.origin = "OurAirport";
 
-        // Ask user to enter destination
         System.out.println("Enter Destination: "); // give the 2 options (plus other)
         System.out.println("Enter 1 for ORD - Chicago O'Hare airport");
         System.out.println("Enter 2 for MSP - Minneapolis St. Paul");
@@ -118,7 +109,6 @@ public class BoardingPassTicket {
                 passenger.destination = "Other location";
         }
 
-        // Ask user to enter departure time
         System.out.println("Enter Departure Time (HH:MM): ");
         System.out.println("1.) 6am departure ");
         System.out.println("2.) 11am departure");
@@ -151,7 +141,7 @@ public class BoardingPassTicket {
         passenger.ticketPrice = calculatePrice(passenger.gender, passenger.age, passenger.destination);
 
         guest = new PassengerDataCollection(passenger.fullName, passenger.email, passenger.phone, passenger.gender, passenger.age, passenger.date, passenger.origin,passenger.destination, passenger.departureTime, passenger.ticketPrice, passenger.arrivalTime );
-    } // sends collected data to constructor
+    }
 
     public static double calculatePrice(String gender, int age, String destination ) {
         float price = 1000F;
@@ -199,7 +189,7 @@ public class BoardingPassTicket {
         Pattern pattern = Pattern.compile(validName);
         Matcher matcher = pattern.matcher(usersEnteredName);
         boolean matches = matcher.matches();
-        if (!matches) { // allows for a return keystroke between first and last name
+        if (!matches) {
             return false;
         } else {
             return true;
