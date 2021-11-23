@@ -1,0 +1,26 @@
+Origin:OurAirport
+Destination:ORD Chicago O'Hare
+DepartureTime:600am
+Arrival Time:715am
+ticketNumber:XHPPJYYWC
+Email:amcmullen9291@gmail.com
+Price:800.0
+Phone:123 123 1234
+PurchaseDate:2021-11-23 00:37:31
+Gender:male
+Age:42
+Name:Anthony McMullen
+-------------------- 
+Origin:OurAirport
+Destination:MSP Minneapolis St Paul
+DepartureTime:1100am
+Arrival Time:115pm
+ticketNumber:E9EVF3PY8
+Email:amcmullen9291@gmail.com
+Price:600.0
+Phone:123 123 1234
+PurchaseDate:2021-11-23 00:38:25
+Gender:male
+Age:42
+Name:Anthony McMullen
+-------------------- 
